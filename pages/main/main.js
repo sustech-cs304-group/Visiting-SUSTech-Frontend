@@ -5,12 +5,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    feed: [],
-    feed_length: 0,
     sustech_imgs: [
       "../../images/main/sustech_1.JPG",
       "../../images/main/sustech_2.JPG",
       "../../images/main/sustech_3.JPG"
+    ],
+    news: [
+      {
+        "news_id": 1,
+        "news_source_id": 23,
+        "news_source_name": "南方科技大学",
+        "news_source_img": "../../images/icons/sustech.png",
+        "news_title": "南方科技大学预约系统上线啦！",
+        "news_time": "2019-05-01",
+        "news_cover": "../../images/main/sustech_1.JPG"
+      },
     ]
   },
 
