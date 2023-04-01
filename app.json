@@ -19,17 +19,17 @@
     "borderStyle": "white",
     "list": [{
       "pagePath": "pages/main/main",
-      "text": "home",
+      "text": "首页",
       "iconPath": "images/icons/home.png",
       "selectedIconPath": "images/icons/home_blue.png"
     }, {
       "pagePath": "pages/map/map",
-      "text": "map",
+      "text": "地图",
       "iconPath": "images/icons/map.png",
       "selectedIconPath": "images/icons/map_blue.png"
     },{
       "pagePath": "pages/more/more",
-      "text": "info",
+      "text": "个人",
       "iconPath": "images/icons/person.png",
       "selectedIconPath": "images/icons/person_blue.png"
     }]
