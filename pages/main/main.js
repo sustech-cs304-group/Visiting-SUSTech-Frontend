@@ -23,7 +23,12 @@ Page({
     ]
   },
 
-
+  jump_to_news: function() {
+    console.log('jump to news')
+    wx.navigateTo({
+      url: '../news/news',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

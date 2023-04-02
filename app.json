@@ -2,8 +2,8 @@
   "pages":[
     "pages/main/main",
     "pages/map/map",
-    "pages/more/more"
-
+    "pages/more/more",
+    "pages/news/news"
   ],
   "window":{
     "backgroundTextStyle":"light",
