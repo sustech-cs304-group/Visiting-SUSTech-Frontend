@@ -6,7 +6,8 @@
     "pages/user-page-detail/record/record",
     "pages/user-page-detail/authority/authority",
     "pages/user-page-detail/modify/modify",
-    "pages/user-page-detail/setting/setting"
+    "pages/user-page-detail/setting/setting",
+    "pages/news/news"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,26 +21,22 @@
     "selectedColor": "#2A8CE5",
     "backgroundColor": "#FBFBFB",
     "borderStyle": "white",
-    "list": [
-      {
-        "pagePath": "pages/main/main",
-        "text": "home",
-        "iconPath": "images/icons/home.png",
-        "selectedIconPath": "images/icons/home_blue.png"
-      },
-      {
-        "pagePath": "pages/map/map",
-        "text": "map",
-        "iconPath": "images/icons/map.png",
-        "selectedIconPath": "images/icons/map_blue.png"
-      },
-      {
-        "pagePath": "pages/more/more",
-        "text": "info",
-        "iconPath": "images/icons/person.png",
-        "selectedIconPath": "images/icons/person_blue.png"
-      }
-    ]
+    "list": [{
+      "pagePath": "pages/main/main",
+      "text": "首页",
+      "iconPath": "images/icons/home.png",
+      "selectedIconPath": "images/icons/home_blue.png"
+    }, {
+      "pagePath": "pages/map/map",
+      "text": "地图",
+      "iconPath": "images/icons/map.png",
+      "selectedIconPath": "images/icons/map_blue.png"
+    },{
+      "pagePath": "pages/more/more",
+      "text": "个人",
+      "iconPath": "images/icons/person.png",
+      "selectedIconPath": "images/icons/person_blue.png"
+    }]
   },
   "networkTimeout": {
     "request": 10000,
