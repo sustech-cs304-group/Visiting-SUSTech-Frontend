@@ -1,16 +1,20 @@
 {
-  "pages":[
+  "pages": [
     "pages/main/main",
     "pages/map/map",
     "pages/more/more",
+    "pages/user-page-detail/record/record",
+    "pages/user-page-detail/authority/authority",
+    "pages/user-page-detail/modify/modify",
+    "pages/user-page-detail/setting/setting",
     "pages/news/news"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#0068C4",
     "navigationBarTitleText": "Sustech",
-    "navigationBarTextStyle":"white",
-    "enablePullDownRefresh":true
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#626567",

@@ -1,2 +1,30 @@
 <!--pages/more/more.wxml-->
-<text>pages/more/more.wxml</text>
+<view class='user head-height'>
+<block wx:if="{{!hasUserInfo}}">
+  <view class='userInfo'>
+    <image class='user-avatar' src='../../images/more/user.png'></image>
+    <text class='user-name'>点击登录</text>
+  </view>
+  <button class="login head-height" open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
+</block>
+<block wx:else>
+  <view class='userInfo'>
+    <image class='user-avatar' src='{{userInfo.avatarUrl}}'></image>
+    <text class='user-name'>{{userInfo.name}}</text>
+  </view>
+</block>
+</view>
+<view class='list'>
+  <block wx:for="{{menuItems}}" wx:key="item">
+    <navigator class="list-item" url="{{item.url}}" hover-class="list-item_active">
+      <view class='item'>
+          <image class='item-image' src='{{item.icon}}'></image>
+          <text class="item-text">{{item.text}}</text>
+          <image class='item-array' src='../../images/more/arrow.png'></image>
+        </view>
+        <view class="div-line"></view>
+    </navigator>
+  </block>
+</view>
+
+
