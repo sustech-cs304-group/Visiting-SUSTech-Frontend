@@ -1,4 +1,4 @@
-<!-- main.wxml -->
+<!-- index.wxml -->
 <scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
   <view style="height: 25%;" class="swiper_images">
     <swiper style="height: 100%;" autoplay="true" duration="1000" indicator-dots="true">
@@ -30,8 +30,8 @@
                     <text>{{item.news_time}}</text>
                 </a>
             </view>
-            <view bindtap="jump_to_news" class="news-content">
-                <view class="news-title">
+            <view class="news-content">
+                <view class="news-title" bindtap="bindQueTap">
                     <a class="question-link">
                         <text>{{item.news_title}}</text>
                     </a>

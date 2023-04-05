@@ -116,7 +116,7 @@
   font-size: 28rpx;
   font-weight: 600px;
   line-height: 40rpx;
-  text-space: 5rpx;
+  /* text-space: 5rpx; */
 }
 
 .news-item .news-content .news-pic {
