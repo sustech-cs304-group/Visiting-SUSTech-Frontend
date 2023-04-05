@@ -8,7 +8,7 @@
     </swiper>
   </view>
 
-  <view class="booking-container">
+  <view class="booking-container" bindtap="jump_to_book_page">
     <view class="booking">
       <view class="booking-icon" >
         <image src="../../images/main/booking.png"></image>
