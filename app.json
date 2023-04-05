@@ -7,7 +7,8 @@
     "pages/user-page-detail/authority/authority",
     "pages/user-page-detail/modify/modify",
     "pages/user-page-detail/setting/setting",
-    "pages/news/news"
+    "pages/news/news",
+    "pages/book-req/book-req"
   ],
   "window": {
     "backgroundTextStyle": "light",
