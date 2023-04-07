@@ -1,0 +1,19 @@
+<view class="main">
+  <view class="title1">预约记录</view>
+  <button class="btn" bindtap="load" type="primary" size="mini">刷新列表</button>
+
+  <block wx:for="{{list}}" wx:key="index">
+    <!-- 包裹图片+两行文字 id="{{index}}"是给按下了那个item记录-->
+    <view class="view_tupian_wenzi" bindtap="click" id="{{index}}">
+      <image class="image_1" src="../images/main_geren.png" />
+
+      <view class="view_wenzi2">
+        <text>预约时间：{{item.date}}</text>
+        <text class="text_small">人数：{{item.numPeople}}</text>
+        <text class="text_small">状态：{{item.state}}</text>
+      </view>
+
+    </view>
+  </block>
+  <view class="text_last">-------------到底了哦 :) -------------</view>
+</view>
