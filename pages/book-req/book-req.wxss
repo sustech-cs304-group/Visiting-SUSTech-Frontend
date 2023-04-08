@@ -36,9 +36,9 @@
 }
 
 .btn {
-  display: flex;
   justify-content: space-between;
-  margin: 50rpx 0;
+  margin: 50rpx auto;
+  width: 80%;
 }
 
 .btn .btn-active {
