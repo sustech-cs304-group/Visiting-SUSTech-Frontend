@@ -10,7 +10,31 @@ Page({
     // idcard: '111111333355779999',
     // numTogether: '0',
     // purpose: '其他',
+    date: '',
+    show: false,
     isloading: false
+  },
+  onDisplay() {
+    this.setData({ show: true });
+  },
+  onClose() {
+    this.setData({ show: false });
+  },
+  formatDate(date) {
+    date = new Date(date);
+    return `${date.getMonth() + 1}/${date.getDate()}`;
+  },
+  onConfirm(event) {
+    this.setData({
+      show: false,
+      date: this.formatDate(event.detail),
+    });
+
+  },
+  onChange(event) {
+    this.setData({
+      checked: event.detail,
+    });
   },
   // 有input变化的时候绑定的方法
   bindDateChange: function (e) {
