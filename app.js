@@ -6,12 +6,11 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    wx.setStorageSync('isNew', true)
     wx.login({
       success: (res) => {
         console.log(res);
         //分配游客id
-        this.globalData.userInfo.nickName =  this.generateUuid()
         wx.request({
           url: 'https://10.25.205.153:443/user/index/login',
           method: 'POST',
@@ -30,8 +29,46 @@ App({
           }
         })
       },
-    })
+    }),
+    this.checkNewUser();
   },
+  checkNewUser:function(e){
+    var that = this;
+        wx.request({
+          url: 'https://10.25.205.153:443/user/person-info/query',
+          method:'GET',
+          header: {
+            'Authorization': wx.getStorageSync('token'),
+            'Content-Type': "application/x-www-form-urlencoded"
+          },
+          success(res){
+            console.log(res);
+            if(res.data.data.name==""){
+               console.log("新用户");
+               that.setData({
+                 'userInfo.nickName' : this.generateUuid()
+               })
+            }else{
+              console.log("老用户");
+              that.setData({
+                userInfo:{
+                  nickName: res.data.data.nickname,
+                  name:res.data.data.name,
+                  avatarUrl: res.data.data.avatarUrl,
+                  phone: res.data.data.phone,
+                  id_card:res.data.data.identityCard,
+                  gender: (res.data.data.gender==0)?'男':'女'
+                }
+              })
+              wx.setStorageSync('isNew', false)
+            }
+          },
+          fail(){
+            console.log("检测用户失败");
+          }
+        });
+  },
+
   getUserInfo:function(cb){
     var that = this
     if(this.globalData.userInfo){

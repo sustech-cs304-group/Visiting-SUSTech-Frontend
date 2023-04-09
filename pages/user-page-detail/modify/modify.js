@@ -14,6 +14,8 @@ Page({
     },
     hasUserInfo: false
   },
+
+
   changeNumber:function(e){
     this.setData({'userInfo.phone': e.detail.value})
     wx.setStorageSync('phone', e.detail.value);
@@ -38,7 +40,6 @@ Page({
       avatarUrl
     } = e.detail;
     this.setData({'userInfo.avatalUrl': avatarUrl});
-    console.log(this.userInfo);
     wx.setStorageSync('avatalUrl', avatarUrl);
   },
   showPopup(e){      //点击选择性别
@@ -100,7 +101,6 @@ Page({
           showCancel: false,
           complete: (res) => {
             if (res.confirm) {
-              
             }
           }
         })
