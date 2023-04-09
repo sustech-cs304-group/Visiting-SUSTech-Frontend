@@ -31,7 +31,6 @@ Page({
       url: '../news/news',
     })
   },
-  //进入首页的跳转函数，检测缓存中是否登陆过，如果未登录则跳转到登录界面
   switch_to_info_page: function(){
     if(wx.getStorageSync('isNew')){
       console.log("跳转到个人信息界面");
