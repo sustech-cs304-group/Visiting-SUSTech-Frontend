@@ -11,6 +11,7 @@ App({
       success: (res) => {
         console.log(res);
         //分配游客id
+        var that = this;
         wx.request({
           url: 'https://10.25.205.153:443/user/index/login',
           method: 'POST',
@@ -23,14 +24,15 @@ App({
           success(res){
             console.log(res);
             wx.setStorageSync('token', res.data.data.token);
+            that.checkNewUser();
           },
           fail(){
             console.log("code发送失败");
           }
         })
       },
-    }),
-    this.checkNewUser();
+    })
+
   },
   checkNewUser:function(e){
     var that = this;
@@ -43,9 +45,21 @@ App({
           },
           success(res){
             console.log(res);
-            if(res.data.data.name==""){
+            if(res.data.data.name==null){
                console.log("新用户");
-               that.globalData.userInfo.nickName = generateUuid();
+               that.globalData.userInfo.nickName = that.generateUuid();
+               wx.showModal({
+                title: '提示',
+                content: '您当前为游客账号，请自行更改个人信息。',
+                showCancel: false,
+                complete: (res) => {
+                  if (res.confirm) {
+                    wx.switchTab({
+                      url: '../more/more',
+                    })
+                  }
+                }
+              })
             }else{
               console.log("老用户");
               that.globalData.userInfo.nickName = res.data.data.nickname;
