@@ -1,4 +1,5 @@
 //app.js
+const config = require('config.js');
 App({
   onLaunch: function () {
     //调用API从本地缓存中获取数据
@@ -12,8 +13,9 @@ App({
         console.log(res);
         //分配游客id
         var that = this;
+        // console.log(config.login)
         wx.request({
-          url: 'https://10.25.205.153:443/user/index/login',
+          url: config.login,
           method: 'POST',
           header: {
             'Content-Type': "application/x-www-form-urlencoded",
@@ -36,8 +38,9 @@ App({
   },
   checkNewUser:function(e){
     var that = this;
+    // console.log(config.query);
         wx.request({
-          url: 'https://10.25.205.153:443/user/person-info/query',
+          url: that.query,
           method:'GET',
           header: {
             'Authorization': wx.getStorageSync('token'),
@@ -110,6 +113,10 @@ App({
       id_card:'',
       gender: ''
     },
-    hasUserInfo: false
-  }
+    hasUserInfo: false,
+  },
+  update_avatar : config.update_avatar,
+  update_person_info : config.update_person_info,
+  query : config.query,
+  login : config.login
 })

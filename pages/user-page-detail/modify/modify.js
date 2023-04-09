@@ -59,7 +59,7 @@ Page({
    var that = this;
    console.log(wx.getStorageSync('avatalUrl'));
   wx.uploadFile({
-    url: 'https://10.25.205.153:443/user/person-info/update-avatar',
+    url: app.update_avatar,
     header: {
       'Authorization': wx.getStorageSync('token'),
       'Content-Type': "application/x-www-form-urlencoded"
@@ -71,7 +71,7 @@ Page({
     }
   })
   wx.request({
-    url: 'https://10.25.205.153:443/user/person-info/update',
+    url: app.update_person_info,
     method: 'POST',
     header:{
       'Authorization': wx.getStorageSync('token'),
