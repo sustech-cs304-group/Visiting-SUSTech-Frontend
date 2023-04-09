@@ -41,18 +41,6 @@ Page({
   switch_to_info_page: function(){
     if(wx.getStorageSync('isNew')){
       console.log("跳转到个人信息界面");
-      wx.showModal({
-        title: '提示',
-        content: '您当前为游客账号，请自行更改个人信息。',
-        showCancel: false,
-        complete: (res) => {
-          if (res.confirm) {
-            wx.switchTab({
-              url: '../more/more',
-            })
-          }
-        }
-      })
     }
   },
   /**

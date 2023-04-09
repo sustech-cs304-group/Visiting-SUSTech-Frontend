@@ -1,61 +1,27 @@
 <!--pages/user-page-detail/modify/modify.wxml-->
 <van-cell-group>
   <view style="height:80rpx;" />
-  <van-cell title="头像" label="点击右侧图标获取微信头像" required>
-        <button slot="right-icon" class="avatar-wrapper" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
-          <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
-        </button>
+  <van-cell size="large" title="头像" label="点击右侧图标获取微信头像" required>
+    <button slot="right-icon" class="avatar-wrapper" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+      <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+    </button>
   </van-cell>
-  <van-field
-    value="{{ userInfo.nickName }}"
-    required
-    clearable
-    label="昵称"
-    placeholder="请输入昵称"
-    bind:blur="bindKeyInput"
-    type="nickname"
-  />
-  <van-field
-    value="{{ userInfo.name }}"
-    required
-    clearable
-    label="姓名"
-    placeholder="请输入姓名"
-    bind:blur="changeName"
-  />
+  <van-field size="large" value="{{ userInfo.nickName }}" required clearable label="昵称" placeholder="请输入昵称" bind:blur="bindKeyInput" type="nickname" />
+  <van-field size="large" value="{{ userInfo.name }}" required clearable label="姓名" placeholder="请输入姓名" bind:blur="changeName" />
 
-  
+
   <view bindtap="showPopup">
-   <van-field
-    label="性别"
-    placeholder="选择性别"
-    value="{{userInfo.gender}}"
-    required
-    readonly
-  />
+    <van-field size="large" label="性别" placeholder="选择性别" value="{{userInfo.gender}}" required readonly />
   </view>
-  <van-field
-    value="{{ userInfo.phone }}"
-    label="手机号"
-    placeholder="请输入手机号"
-    border="{{ false }}"
-    bind:blur="changeNumber"
-    required
-  />
-  <van-field
-  value="{{ userInfo.id_card }}"
-    label="身份证"
-    placeholder="请输入身份证号"
-    border="{{ false }}"
-    bind:blur="changeId"
-    required
-  />
+  <van-field size="large" value="{{ userInfo.phone }}" label="手机号" placeholder="请输入手机号" bind:blur="changeNumber" required />
+  <van-field size="large" value="{{ userInfo.id_card }}" label="身份证" placeholder="请输入身份证号" border="{{ false }}" bind:blur="changeId" required />
 </van-cell-group>
-<view style="height:100rpx;"/>
-<van-button icon="https://img.yzcdn.cn/vant/logo.png" type="info" class="btn" bind:click="update_info">
-  提交</van-button>
-<van-popup show="{{ show }}" bind:close="onClose"  position="bottom"
-  custom-style="height: 40%">
-    <van-picker title="选择性别" show-toolbar columns="{{ columns }}"  bind:cancel="onClose"
-  bind:confirm="onConfirm"/>
+<view style="height:100rpx;" />
+<!-- <van-button icon="https://img.yzcdn.cn/vant/logo.png" type="info" class="btn" bind:click="update_info">
+  提交</van-button> -->
+<view class="weui-form__opr-area">
+  <a aria-role="button" class="weui-btn weui-btn_primary" bindtap="update_info">提交</a>
+</view>
+<van-popup show="{{ show }}" bind:close="onClose" position="bottom" custom-style="height: 40%">
+  <van-picker title="选择性别" show-toolbar columns="{{ columns }}" bind:cancel="onClose" bind:confirm="onConfirm" />
 </van-popup>

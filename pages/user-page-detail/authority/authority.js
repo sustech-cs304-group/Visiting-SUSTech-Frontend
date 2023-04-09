@@ -8,6 +8,12 @@ Page({
 
   },
 
+  jump_to_news_pub: function name(params) {
+    console.log('jump to news-publish page')
+    wx.navigateTo({
+      url: '../../news-publish/news-publish',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
