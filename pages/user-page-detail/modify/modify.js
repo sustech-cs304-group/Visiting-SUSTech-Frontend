@@ -57,19 +57,22 @@ Page({
  },
  update_info: function(e){
    var that = this;
-   console.log(wx.getStorageSync('avatalUrl'));
+   console.log(wx.getStorageSync('name'));
+  //  console.log(app.globalData.userInfo.name);
   wx.uploadFile({
     url: app.update_avatar,
     header: {
       'Authorization': wx.getStorageSync('token'),
       'Content-Type': "application/x-www-form-urlencoded"
     },
-    filePath: wx.getStorageSync('avatalUrl'),
+    filePath: (wx.getStorageSync('avatalUrl')=="")? app.globalData.userInfo.avatarUrl: wx.getStorageSync('avatalUrl'),
     name: 'avatar',
     success: function (res) {
       console.log(res)
     }
   })
+  //在清除数据缓存后，再次登录，如果有的个人信息不进行修改，则会因为getStorageSync而设置为空
+  //修改方法：进行缓存的判断，如果为空则直接赋global值
   wx.request({
     url: app.update_person_info,
     method: 'POST',
@@ -78,11 +81,11 @@ Page({
       'Content-Type': "application/json"
     },
     data:{
-      nickname: wx.getStorageSync('nickname'),
-      phone: wx.getStorageSync('phone'),
-      gender: wx.getStorageSync('gender'),
-      identityCard: wx.getStorageSync('id_card'),
-      name: wx.getStorageSync('name')
+      nickname: (wx.getStorageSync('nickname')=="")? app.globalData.userInfo.nickName : wx.getStorageSync('nickname'),
+      phone: (wx.getStorageSync('phone')=="")? app.globalData.userInfo.phone : wx.getStorageSync('phone'),
+      gender: (wx.getStorageSync('gender')=="") ? ((app.globalData.userInfo.gender=='男')?0:1): wx.getStorageSync('gender'),
+      identityCard: (wx.getStorageSync('id_card')=="")? app.globalData.userInfo.id_card: wx.getStorageSync('id_card'),
+      name: (wx.getStorageSync('name')=="")? app.globalData.userInfo.name: wx.getStorageSync('name')
     },
     success(res){
       console.log(res);
@@ -96,12 +99,12 @@ Page({
           }
           if (res.confirm) {
             app.globalData.userInfo={
-              nickName: wx.getStorageSync('nickname'),
-              avatarUrl: wx.getStorageSync('avatalUrl'),
-              phone: wx.getStorageSync('phone'),
+              nickName: (wx.getStorageSync('nickname')=="")? app.globalData.userInfo.nickName : wx.getStorageSync('nickname'),
+              avatarUrl: (wx.getStorageSync('avatalUrl')=="")? app.globalData.userInfo.avatarUrl: wx.getStorageSync('avatalUrl'),
+              phone: (wx.getStorageSync('phone')=="")? app.globalData.userInfo.phone : wx.getStorageSync('phone'),
               gender: (wx.getStorageSync('gender')==0)?'男':'女',
-              id_card: wx.getStorageSync('id_card'),
-              name: wx.getStorageSync('name')
+              id_card: (wx.getStorageSync('id_card')=="")? app.globalData.userInfo.id_card: wx.getStorageSync('id_card'),
+              name: (wx.getStorageSync('name')=="")? app.globalData.userInfo.name: wx.getStorageSync('name')
             }
             wx.navigateBack();
           }
