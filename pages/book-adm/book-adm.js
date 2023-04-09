@@ -75,6 +75,7 @@ Page({
         header: {
           'Authorization': wx.getStorageSync('token'),
           'Content-Type': "application/x-www-form-urlencoded"
+          // 'Content-Type': "application/json"
         },
         data: {
           isApproval: isApproval,
