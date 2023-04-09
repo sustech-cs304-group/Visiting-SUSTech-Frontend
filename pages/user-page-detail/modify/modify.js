@@ -35,12 +35,33 @@ Page({
     wx.setStorageSync('nickname', e.detail.value);
   },
   onChooseAvatar(e) {
+    var that = this;
     console.log(e);
     const {
       avatarUrl
     } = e.detail;
     this.setData({'userInfo.avatalUrl': avatarUrl});
     wx.setStorageSync('avatalUrl', avatarUrl);
+    wx.uploadFile({
+      url: app.update_avatar,
+      header: {
+        'Authorization': wx.getStorageSync('token'),
+        'Content-Type': "application/x-www-form-urlencoded"
+      },
+      filePath: (wx.getStorageSync('avatalUrl')=="")? app.globalData.userInfo.avatarUrl: wx.getStorageSync('avatalUrl'),
+      name: 'avatar',
+      success: function (res) {
+        console.log(res)
+        let result = JSON.parse(res.data);
+        let newUrl = result.data;
+        console.log(newUrl);
+        that.setData({
+          'userInfo.avatalUrl' : newUrl
+        })
+        wx.setStorageSync('avatalUrl', newUrl);
+      }
+    })
+    
   },
   showPopup(e){      //点击选择性别
     this.setData({show:true})
@@ -58,19 +79,6 @@ Page({
  update_info: function(e){
    var that = this;
    console.log(wx.getStorageSync('name'));
-  //  console.log(app.globalData.userInfo.name);
-  wx.uploadFile({
-    url: app.update_avatar,
-    header: {
-      'Authorization': wx.getStorageSync('token'),
-      'Content-Type': "application/x-www-form-urlencoded"
-    },
-    filePath: (wx.getStorageSync('avatalUrl')=="")? app.globalData.userInfo.avatarUrl: wx.getStorageSync('avatalUrl'),
-    name: 'avatar',
-    success: function (res) {
-      console.log(res)
-    }
-  })
   //在清除数据缓存后，再次登录，如果有的个人信息不进行修改，则会因为getStorageSync而设置为空
   //修改方法：进行缓存的判断，如果为空则直接赋global值
   wx.request({
