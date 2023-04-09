@@ -1,1 +1,21 @@
 /* pages/user-page-detail/modify/modify.wxss */
+.avatar-wrapper {
+  padding: 0;
+  width: 56px !important;
+  border-radius: 8px;
+  left: -15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.avatar {
+  display: block;
+  width: 56px;
+  height: 56px;
+}
+
+.btn{
+  left: 120px;
+  position: fixed;
+}

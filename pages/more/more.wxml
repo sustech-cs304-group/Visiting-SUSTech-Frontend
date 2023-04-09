@@ -1,18 +1,9 @@
 <!--pages/more/more.wxml-->
 <view class='user head-height'>
-<block wx:if="{{!hasUserInfo}}">
-  <view class='userInfo'>
-    <image class='user-avatar' src='../../images/more/user.png'></image>
-    <text class='user-name'>点击登录</text>
-  </view>
-  <button class="login head-height" open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
-</block>
-<block wx:else>
   <view class='userInfo'>
     <image class='user-avatar' src='{{userInfo.avatarUrl}}'></image>
-    <text class='user-name'>{{userInfo.name}}</text>
+    <text class='user-name'>{{userInfo.nickName}}</text>
   </view>
-</block>
 </view>
 <view class='list'>
   <block wx:for="{{menuItems}}" wx:key="item">

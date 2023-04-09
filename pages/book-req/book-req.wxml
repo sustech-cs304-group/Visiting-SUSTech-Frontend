@@ -17,7 +17,7 @@
       <van-field value="{{ idcard }}" size="large" clearable label="证件号" placeholder="请输入预约人身份证号" maxlength="18" type="idcard" />
       <van-field value="{{ numTogether }}" size="large" clearable label="随行人数" placeholder="请输入随行人数(最大人数5人)" maxlength="18" type="idcard" />
     </van-cell-group>
-    <van-cell title="到访目的" size="large"></van-cell>
+    <van-cell title="到访目的" size="large" border="{{ false }}"></van-cell>
     <checkbox-group bindchange="checkChange" name="purpose">
       <van-col offset="1">
         <van-checkbox value="{{ checked }}" shape="square" bind:change="onChange">

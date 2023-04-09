@@ -1,11 +1,20 @@
 // pages/more/more.js
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo: {},
+    userInfo: {
+      nickName: '',
+      name:'',
+      avatarUrl: '/images/more/user.png',
+      phone: '',
+      id_card:'',
+      gender: ''
+    },
     hasUserInfo: false,
     menuItems:[
       {text: '修改个人信息' , icon: '../../images/more/modify.png', url: '../../pages/user-page-detail/modify/modify'},
@@ -14,7 +23,6 @@ Page({
       {text: '设置', icon:'../../images/more/set.png', url:'../../pages/user-page-detail/setting/setting'}
     ]
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -33,7 +41,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.setData({
+      userInfo: app.globalData.userInfo,
+      hasUserInfo: app.globalData.hasUserInfo
+    })
   },
 
   /**
