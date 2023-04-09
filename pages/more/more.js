@@ -1,11 +1,20 @@
 // pages/more/more.js
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo: {},
+    userInfo: {
+      nickName: '',
+      name:'',
+      avatarUrl: '/images/more/user.png',
+      phone: '',
+      id_card:'',
+      gender: ''
+    },
     hasUserInfo: false,
     menuItems:[
       {text: '修改个人信息' , icon: '../../images/more/modify.png', url: '../../pages/user-page-detail/modify/modify'},
@@ -14,7 +23,54 @@ Page({
       {text: '设置', icon:'../../images/more/set.png', url:'../../pages/user-page-detail/setting/setting'}
     ]
   },
-
+  login:function(){
+    let that = this;
+    wx.getUserProfile({
+      desc: '完善用户资料',
+      success(res) {
+        console.log(res);
+        that.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+        app.globalData.userInfo = res.userInfo;
+        app.globalData.hasUserInfo = true;
+        wx.setStorageSync('avatar', res.userInfo.avatarUrl);
+        wx.setStorageSync('name', res.userInfo.nickName);
+        wx.showLoading({
+          title: '正在登录',
+        })
+        wx.request({
+          url: 'https://10.25.205.153:443/user/index/user-info',
+          method: 'POST',
+          header:{
+            'Authorization': wx.getStorageSync('token'),
+            'Content-Type': "application/x-www-form-urlencoded"
+          },
+          data:{
+            nickname: wx.getStorageSync('name'),
+            avatarUrl: wx.getStorageSync('avatar')
+          },
+          success(res){
+            console.log(res);
+            wx.hideLoading();
+          }
+        })
+      },
+      fail(){
+        wx.showModal({
+          title: '提示',
+          content: '您点击了拒绝授权，将无法获得个人信息及其他服务',
+          showCancel: false,
+          complete: (res) => {
+            if (res.confirm) {
+              
+            }
+          }
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -33,7 +89,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.setData({
+      userInfo: app.globalData.userInfo,
+      hasUserInfo: app.globalData.hasUserInfo
+    })
   },
 
   /**

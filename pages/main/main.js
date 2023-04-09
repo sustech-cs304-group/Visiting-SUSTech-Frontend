@@ -1,4 +1,6 @@
 // pages/map/map.js
+const app = getApp()
+
 Page({
 
   /**
@@ -36,11 +38,29 @@ Page({
       url: '../news/news',
     })
   },
+  //进入首页的跳转函数，检测缓存中是否登陆过，如果未登录则跳转到登录界面
+  switch_to_info_page: function(){
+    if(!app.globalData.hasUserInfo){
+      console.log("跳转到个人信息界面");
+      wx.showModal({
+        title: '提示',
+        content: '您当前为游客账号，请您自行更改个人信息以便获取其他服务。',
+        showCancel: false,
+        complete: (res) => {
+          if (res.confirm) {
+            wx.switchTab({
+              url: '../more/more',
+            })
+          }
+        }
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.switch_to_info_page();
   },
 
   /**

@@ -61,6 +61,9 @@
     "van-col": "@vant/weapp/col/index",
     "van-uploader": "@vant/weapp/uploader/index",
     "van-grid": "@vant/weapp/grid/index",
-    "van-grid-item": "@vant/weapp/grid-item/index"
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-picker": "@vant/weapp/picker/index",
+    "van-image": "@vant/weapp/image/index"
   }
 }
