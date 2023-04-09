@@ -23,54 +23,6 @@ Page({
       {text: '设置', icon:'../../images/more/set.png', url:'../../pages/user-page-detail/setting/setting'}
     ]
   },
-  login:function(){
-    let that = this;
-    wx.getUserProfile({
-      desc: '完善用户资料',
-      success(res) {
-        console.log(res);
-        that.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-        app.globalData.userInfo = res.userInfo;
-        app.globalData.hasUserInfo = true;
-        wx.setStorageSync('avatar', res.userInfo.avatarUrl);
-        wx.setStorageSync('name', res.userInfo.nickName);
-        wx.showLoading({
-          title: '正在登录',
-        })
-        wx.request({
-          url: 'https://10.25.205.153:443/user/index/user-info',
-          method: 'POST',
-          header:{
-            'Authorization': wx.getStorageSync('token'),
-            'Content-Type': "application/x-www-form-urlencoded"
-          },
-          data:{
-            nickname: wx.getStorageSync('name'),
-            avatarUrl: wx.getStorageSync('avatar')
-          },
-          success(res){
-            console.log(res);
-            wx.hideLoading();
-          }
-        })
-      },
-      fail(){
-        wx.showModal({
-          title: '提示',
-          content: '您点击了拒绝授权，将无法获得个人信息及其他服务',
-          showCancel: false,
-          complete: (res) => {
-            if (res.confirm) {
-              
-            }
-          }
-        })
-      }
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
