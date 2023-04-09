@@ -1,2 +1,3 @@
 <!--pages/user-page-detail/authority/authority.wxml-->
-<text>pages/user-page-detail/authority/authority.wxml</text>
+<van-cell size="large" title="审批预约" icon="comment-o" />
+<van-cell size="large" title="发布资讯" icon="notes-o" bind:click="jump_to_news_pub"/>
