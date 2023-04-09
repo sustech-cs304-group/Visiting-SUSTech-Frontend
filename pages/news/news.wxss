@@ -8,7 +8,7 @@
 
 .title {
   position: relative;
-  width: 650rpx;
+  width: 750rpx;
   padding: 40rpx 50rpx 30rpx;
   background: #298DE5;
   color: #fff;
@@ -23,7 +23,6 @@
 }
 .publisher-wrp .bg-half{
   position: absolute;
-  top: 0;
   width: 750rpx;
   height: 75rpx;
   background: #298DE5;
