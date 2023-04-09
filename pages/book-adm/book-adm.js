@@ -77,8 +77,9 @@ Page({
           'Content-Type': "application/x-www-form-urlencoded"
         },
         data: {
-          isApproval: isApproval,
+          approval: isApproval,
           id: serialNum,
+          comment: 'test'
         },
         success: (res) => {
           console.log(res)

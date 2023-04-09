@@ -70,7 +70,7 @@ Page({
     } else {
       var formBookReq = e.detail.value;
       wx.request({
-        url: 'https://10.17.133.136:443/appointment/add',
+        url: 'https://10.25.205.153:443/appointment/add',
         method: 'POST',
         header: {
           'Authorization': wx.getStorageSync('token'),
@@ -80,7 +80,7 @@ Page({
           appointmentDate: formBookReq.date,
           name: formBookReq.name,
           phone: formBookReq.phone,
-          idcard: formBookReq.idCard,
+          identityCard: formBookReq.idCard,
           accompanyingNum: formBookReq.numPeople,
           purpose: formBookReq.purpose[0]
         },
