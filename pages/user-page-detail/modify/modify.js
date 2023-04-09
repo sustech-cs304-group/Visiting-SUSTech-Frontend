@@ -56,6 +56,20 @@ Page({
    wx.setStorageSync('gender', (e.detail.value=='男')?0:1);
  },
  update_info: function(e){
+   var that = this;
+   console.log(wx.getStorageSync('avatalUrl'));
+  wx.uploadFile({
+    url: 'https://10.25.205.153:443/user/person-info/update-avatar',
+    header: {
+      'Authorization': wx.getStorageSync('token'),
+      'Content-Type': "application/x-www-form-urlencoded"
+    },
+    filePath: wx.getStorageSync('avatalUrl'),
+    name: 'avatar',
+    success: function (res) {
+      console.log(res)
+    }
+  })
   wx.request({
     url: 'https://10.25.205.153:443/user/person-info/update',
     method: 'POST',
@@ -65,7 +79,6 @@ Page({
     },
     data:{
       nickname: wx.getStorageSync('nickname'),
-      avatarUrl: wx.getStorageSync('avatalUrl'),
       phone: wx.getStorageSync('phone'),
       gender: wx.getStorageSync('gender'),
       identityCard: wx.getStorageSync('id_card'),

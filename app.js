@@ -69,6 +69,7 @@ App({
               that.globalData.userInfo.id_card = res.data.data.identityCard;
               that.globalData.userInfo.gender = (res.data.data.gender==0)?'男':'女';
               wx.setStorageSync('isNew', false)
+              console.log(that.globalData.userInfo.avatarUrl);
             }
           },
           fail(){
