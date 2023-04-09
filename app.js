@@ -45,21 +45,15 @@ App({
             console.log(res);
             if(res.data.data.name==""){
                console.log("新用户");
-               that.setData({
-                 'userInfo.nickName' : this.generateUuid()
-               })
+               that.globalData.userInfo.nickName = generateUuid();
             }else{
               console.log("老用户");
-              that.setData({
-                userInfo:{
-                  nickName: res.data.data.nickname,
-                  name:res.data.data.name,
-                  avatarUrl: res.data.data.avatarUrl,
-                  phone: res.data.data.phone,
-                  id_card:res.data.data.identityCard,
-                  gender: (res.data.data.gender==0)?'男':'女'
-                }
-              })
+              that.globalData.userInfo.nickName = res.data.data.nickname;
+              that.globalData.userInfo.name = res.data.data.name;
+              that.globalData.userInfo.avatarUrl = res.data.data.avatarUrl;
+              that.globalData.userInfo.phone = res.data.data.phone;
+              that.globalData.userInfo.id_card = res.data.data.identityCard;
+              that.globalData.userInfo.gender = (res.data.data.gender==0)?'男':'女';
               wx.setStorageSync('isNew', false)
             }
           },
