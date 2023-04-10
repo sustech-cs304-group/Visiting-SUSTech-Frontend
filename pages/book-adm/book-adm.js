@@ -1,4 +1,5 @@
 // pages/book-adm/book-adm.js
+const config = require('../../config')
 Page({
   data: {
     list: [
@@ -23,7 +24,7 @@ Page({
   load: function (options) {
     var th = this;
     wx.request({
-      url: 'https://10.17.133.136:443/appointment/query',
+      url: config.appointment_query,
       method: 'GET',
       header: {
         'Authorization': wx.getStorageSync('token'),
@@ -41,7 +42,7 @@ Page({
             date: obj.appointmentDate,
             numPeople: obj.accompanyingNum,
             phone: obj.phone,
-            idCard: obj.idcard,
+            idCard: obj.identityCard,
           };
           newList.push(item);
         }
@@ -70,7 +71,7 @@ Page({
   change: function (isApproval, serialNum) {
     console.log(isApproval, serialNum)
     wx.request({
-      url: 'https://10.17.133.136:443/appointment/justify',
+      url: config.appointment_justify,
         method: 'POST',
         header: {
           'Authorization': wx.getStorageSync('token'),

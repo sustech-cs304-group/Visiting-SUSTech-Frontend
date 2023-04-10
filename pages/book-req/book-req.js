@@ -1,5 +1,7 @@
 // pages/book-req/book-req.js
-import WxValidate from '../../utils/WxValidate'
+// import WxValidate from '../../utils/WxValidate'
+WxValidate = require('../../utils/WxValidate')
+const config = require('../../config')
 
 Page({
   data: {
@@ -70,7 +72,7 @@ Page({
     } else {
       var formBookReq = e.detail.value;
       wx.request({
-        url: 'https://10.25.205.153:443/appointment/add',
+        url: config.appointment_add,
         method: 'POST',
         header: {
           'Authorization': wx.getStorageSync('token'),

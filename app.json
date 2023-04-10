@@ -9,7 +9,6 @@
     "pages/user-page-detail/setting/setting",
     "pages/news/news",
     "pages/book-req/book-req",
-    "pages/book-list/book-list",
     "pages/book-adm/book-adm",
     "pages/news-publish/news-publish"
   ],
