@@ -26,7 +26,6 @@ Page({
   },
 
   jump_to_book_page: function() {
-    console.log('jump to book page')
     wx.navigateTo({
       url: '../book-req/book-req',
     })
