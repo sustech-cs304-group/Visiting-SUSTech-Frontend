@@ -1,2 +1,49 @@
 <!--pages/more/more.wxml-->
-<text>pages/more/more.wxml</text>
+<view class='user head-height'>
+  <view class='userInfo'>
+    <image class='user-avatar' src='{{userInfo.avatarUrl}}'></image>
+    <text class='user-name'>{{userInfo.nickName}}</text>
+  </view>
+</view>
+<view class='list'>
+<block wx:if="{{userInfo.type=='admin'}}">
+  <block  wx:for="{{menuItems}}" wx:key="item">
+      <navigator class="list-item" url="{{item.url}}" hover-class="list-item_active">
+        <view class='item'>
+            <image class='item-image' src='{{item.icon}}'></image>
+            <text class="item-text">{{item.text}}</text>
+            <image class='item-array' src='../../images/more/arrow.png'></image>
+          </view>
+          <view class="div-line"></view>
+      </navigator>
+    </block>
+</block>
+<block wx:else>
+    <navigator class="list-item" url="{{menuItems[0].url}}" hover-class="list-item_active">
+      <view class='item'>
+          <image class='item-image' src='{{menuItems[0].icon}}'></image>
+          <text class="item-text">{{menuItems[0].text}}</text>
+          <image class='item-array' src='../../images/more/arrow.png'></image>
+        </view>
+        <view class="div-line"></view>
+    </navigator>
+    <navigator class="list-item" url="{{menuItems[1].url}}" hover-class="list-item_active">
+      <view class='item'>
+          <image class='item-image' src='{{menuItems[1].icon}}'></image>
+          <text class="item-text">{{menuItems[1].text}}</text>
+          <image class='item-array' src='../../images/more/arrow.png'></image>
+        </view>
+        <view class="div-line"></view>
+    </navigator>
+    <navigator class="list-item" url="{{menuItems[3].url}}" hover-class="list-item_active">
+      <view class='item'>
+          <image class='item-image' src='{{menuItems[3].icon}}'></image>
+          <text class="item-text">{{menuItems[3].text}}</text>
+          <image class='item-array' src='../../images/more/arrow.png'></image>
+        </view>
+        <view class="div-line"></view>
+    </navigator>
+</block>
+</view>
+
+

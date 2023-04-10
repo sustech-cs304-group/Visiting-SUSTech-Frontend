@@ -1,0 +1,46 @@
+/* pages/book-req/book-req.wxss */
+
+.main {
+  margin: 30rpx;
+}
+
+.main .title1 {
+  font-size: 40rpx;
+  font-weight: bold;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left: 30rpx;
+  color: white;
+  border-radius: 10rpx;
+  background-color: #ff6f3b;
+}
+
+.title2 {
+  font-size: 40rpx;
+  font-weight: bold;
+  padding: 30rpx 0 10rpx;
+}
+
+.picker {
+  font-weight: lighter;
+  color:#333;
+}
+
+.input1 {
+  border: 2rpx solid #646464;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #333;
+  padding: 5rpx 30rpx;
+  border-radius: 20rpx;
+}
+
+.btn {
+  justify-content: space-between;
+  margin: 50rpx auto;
+  width: 80%;
+}
+
+.btn .btn-active {
+  opacity: .6;
+}

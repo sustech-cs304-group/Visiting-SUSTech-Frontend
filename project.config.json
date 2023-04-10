@@ -1,29 +1,31 @@
 {
+  "appid": "wx64166ba63297087b",
+  "projectname": "Visiting-Sustech-Frontend",
   "compileType": "miniprogram",
-  "setting": {
-    "coverView": true,
-    "es6": true,
-    "postcss": true,
-    "minified": true,
-    "enhance": true,
-    "showShadowRootInWxmlPanel": true,
-    "packNpmRelationList": [],
-    "babelSetting": {
-      "ignore": [],
-      "disablePlugins": [],
-      "outputPath": ""
-    },
-    "ignoreUploadUnusedFiles": true
+  "libVersion": "2.30.2",
+  "packOptions": {
+    "ignore": [],
+    "include": []
   },
   "condition": {},
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
   },
-  "libVersion": "2.30.2",
-  "packOptions": {
-    "ignore": [],
-    "include": []
-  },
-  "appid": "wx64166ba63297087b"
+  "setting": {
+    "packNpmManually": true,
+    "packNpmRelationList": [
+      {
+        "packageJsonPath": "./package.json",
+        "miniprogramNpmDistDir": "./"
+      }
+    ],
+    "ignoreUploadUnusedFiles": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "condition": false
+  }
 }

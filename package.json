@@ -1,0 +1,23 @@
+{
+  "name": "visiting-sustech-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sustech-cs304-group/Visiting-Sustech-Frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sustech-cs304-group/Visiting-Sustech-Frontend/issues"
+  },
+  "homepage": "https://github.com/sustech-cs304-group/Visiting-Sustech-Frontend#readme",
+  "dependencies": {
+    "@vant/weapp": "^1.10.15",
+    "weui-miniprogram": "^1.2.7"
+  }
+}

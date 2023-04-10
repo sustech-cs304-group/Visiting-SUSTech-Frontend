@@ -1,0 +1,61 @@
+<page-meta root-font-size='system' />
+<view class='page' data-weui-theme='{{theme}}'>
+  <form bindsubmit='submitForm' class='weui-form'>
+    <view class='weui-form__text-area'>
+      <h2 class='weui-form__title'>入校预约申请</h2>
+      <view class='weui-form__desc'>
+        预约成功后，您将收到确认信息和相关指引。
+        请您务必遵守预约的时间和地点，并严格按照要求进行入校手续。
+      </view>
+    </view>
+    <text>\n</text>
+
+    <van-cell-group>
+      <van-field name='date' value='{{ date }}' size='large' label='预约日期' placeholder='选择入校日期' bind:focus='onDisplay' />
+      <van-calendar show='{{ show }}' bind:close='onClose' bind:confirm='onConfirm' />
+      <van-field name='name' value='{{ name }}' size='large' clearable label='姓名' placeholder='请输入真实姓名' />
+      <van-field name='phone' value='{{ phone }}' size='large' clearable label='联系方式' placeholder='请输入手机号' maxlength='11' />
+      <van-field name="idCard" value='{{ idcard }}' size='large' clearable label='证件号' placeholder='请输入预约人身份证号' maxlength='18' type='idcard' />
+      <van-field name="numPeople" value='{{ numTogether }}' size='large' clearable label='随行人数' placeholder='请输入随行人数(最大人数5人)' maxlength='18' type='idcard' />
+    </van-cell-group>
+
+    <van-cell title='到访目的' size='large'></van-cell>
+    <!-- <checkbox-group bindchange='checkChange' name='purpose'>
+      <van-col offset='3'>
+        <van-checkbox value='{{ checked }}' shape='square' bind:change='onChange'>
+          学术交流
+        </van-checkbox>
+      </van-col>
+      <van-col offset='3'>
+        <van-checkbox value='{{ checked }}' shape='square' bind:change='onChange'>
+          演出活动
+        </van-checkbox>
+      </van-col>
+      <text class='title2'>\n</text>
+      <van-col offset='3'>
+        <van-checkbox value='{{ checked }}' shape='square' bind:change='onChange'>
+          参观游览
+        </van-checkbox>
+      </van-col>
+      <van-col offset='3'>
+        <van-checkbox value='{{ checked }}'  bind:change='onChange'shape='square'>
+          其他
+        </van-checkbox>
+      </van-col>
+    </checkbox-group> -->
+
+    <!-- <text>\n</text>
+    <view class="title2">到访目的</view> -->
+    <checkbox-group bindchange="checkChange" name="purpose">
+      <checkbox value="学术交流">学术交流</checkbox>
+      <checkbox value="演出活动">演出活动 </checkbox>
+      <checkbox value="参观游览">参观游览 </checkbox>
+      <checkbox value="其他">其他</checkbox>
+    </checkbox-group>
+
+    <text>\n\n</text>
+    <view class='weui-form__opr-area'>
+      <button form-type='submit' loading='{{isloading}}' bindtap='getsubload' hover-class='btn-active' aria-role='button' class='weui-btn weui-btn_primary'>确定</button>
+    </view>
+  </form>
+</view>

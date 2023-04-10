@@ -1,4 +1,6 @@
 // pages/map/map.js
+const app = getApp()
+
 Page({
 
   /**
@@ -23,12 +25,28 @@ Page({
     ]
   },
 
+  jump_to_book_page: function() {
+    wx.navigateTo({
+      url: '../book-req/book-req',
+    })
+  },
 
+  jump_to_news: function() {
+    console.log('jump to news')
+    wx.navigateTo({
+      url: '../news/news',
+    })
+  },
+  switch_to_info_page: function(){
+    if(wx.getStorageSync('isNew')){
+      console.log("跳转到个人信息界面");
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    // this.switch_to_info_page();
   },
 
   /**

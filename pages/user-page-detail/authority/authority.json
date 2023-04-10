@@ -1,6 +1,6 @@
 {
   "usingComponents": {},
   "navigationBarBackgroundColor": "#FFFFFF",
-  "navigationBarTitleText": "个人信息",
+  "navigationBarTitleText": "管理员权限",
   "navigationBarTextStyle": "black"
 }
