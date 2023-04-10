@@ -1,2 +1,32 @@
 <!--pages/book-adm/book-adm.wxml-->
-<text>pages/book-adm/book-adm.wxml</text>
+
+<view class="main">
+  <view class='weui-form__text-area'>
+    <view class="weui-form__title">管理员预约审批</view>
+  </view>
+  <button class="btn" bindtap="load" type="primary" size="mini">刷新列表</button>
+
+  <block wx:for="{{list}}" wx:key="index">
+    <view class="view_tupian_wenzi" bindtap="click" id="{{index}}">
+      <view class="view_wenzi2">
+        <text>申请人姓名：{{item.name}}</text>
+        <text class="text_small">预约时间：{{item.date}}</text>
+        <text class="text_small">随行人数：{{item.numPeople}}</text>
+        <text class="text_small">联系电话：{{item.phone}}</text>
+        <text class="text_small">证件号：{{item.idCard}}</text>
+      </view>
+
+      <view class="view_wenzi2_custom">
+        <van-button round type="primary" bindtap='approve' data-serialNum='{{item.serialNum}}'>同意</van-button>
+        <text>\n</text>
+        <van-button round type="default" bindtap='show_commet' data-serialNum='{{item.serialNum}}'>拒绝</van-button>
+      </view>
+
+    </view>
+  </block>
+  <view class="text_last">-------------到底了哦 :) -------------</view>
+</view>
+
+<van-dialog use-slot title="拒绝原因" show="{{ show }}" show-cancel-button bind:confirm="try_to_refuse" bind:close="onClose">
+  <van-field name='comment' value='{{ comment }}' size='large' label='原因：' placeholder='输入拒绝原因' bind:blur="bindKeyInput" />
+</van-dialog>

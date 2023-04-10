@@ -415,4 +415,4 @@ class WxValidate {
   }
 }
 
-export default WxValidate
+module.exports = WxValidate

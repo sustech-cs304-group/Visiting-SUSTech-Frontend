@@ -1,5 +1,7 @@
 // pages/book-req/book-req.js
-import WxValidate from '../../utils/WxValidate'
+// import WxValidate from '../../utils/WxValidate'
+WxValidate = require('../../utils/WxValidate')
+const config = require('../../config')
 
 Page({
   data: {
@@ -22,14 +24,22 @@ Page({
   },
   formatDate(date) {
     date = new Date(date);
-    return `${date.getMonth() + 1}/${date.getDate()}`;
+    var mon = date.getMonth() + 1;
+    mon = mon.toString();
+    if (mon.length < 2) {
+      mon = "0" + mon;
+    }
+    var day = date.getDate().toString();
+    if (day.length < 2) {
+      day = "0" + day;
+    }
+    return "2023-" + mon + "-" + day;
   },
   onConfirm(event) {
     this.setData({
       show: false,
       date: this.formatDate(event.detail),
     });
-
   },
   onChange(event) {
     this.setData({
@@ -60,11 +70,34 @@ Page({
       this.showModal(error[0])
       return false
     } else {
-      this.showModal({
-        msg: '提交成功'
+      var formBookReq = e.detail.value;
+      wx.request({
+        url: config.appointment_add,
+        method: 'POST',
+        header: {
+          'Authorization': wx.getStorageSync('token'),
+          'content-type': "application/json"
+        },
+        data: {
+          appointmentDate: formBookReq.date,
+          name: formBookReq.name,
+          phone: formBookReq.phone,
+          identityCard: formBookReq.idCard,
+          accompanyingNum: formBookReq.numPeople,
+          purpose: formBookReq.purpose[0]
+        },
+        success: (res) => {
+          console.log(res)
+          console.log('预约申请已上传到后端', 20)
+          this.showModal({ msg: '提交成功' })
+          return true
+        },
+        fail: (res) => {
+          console.log('抱歉，预约申请上传到后端失败', 40)
+          this.showModal({ msg: '上传失败，请重试' })
+          return false
+        }
       })
-      var formBookReq=e.detail.value;
-      return formBookReq
     }
   },
   // 提交按钮的动画
@@ -143,7 +176,7 @@ Page({
     this.WxValidate.addMethod('minArraySize', (value, param) => {
       // return this.WxValidate.optional(value) && (value.length >= param)
       return value.length >= param
-  }, '最小Array长度')
+    }, '最小Array长度')
   }
 })
 

@@ -1,66 +1,60 @@
-// pages/user-page-detail/record/record.js
+// pages/book-list/book-list.js
+const config = require('../../../config')
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    list: [
+      { date: '2023-4-19', numPeople: 1, state: "通过" },
+      { date: '2023-4-23', numPeople: 4, state: "通过" },
+      { date: '2023-4-27', numPeople: 0, state: "待审核" }
+    ]
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
+  //报错 
+  showModal(error) {
+    wx.showModal({
+      content: error.msg,
+      showCancel: false,
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  click: function (e) {
+    console.log("按了：", e.currentTarget.id)
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
+  onLoad: function (e) {
+    this.load();
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
+  load: function (options) {
+    var th = this;
+    wx.request({
+      url: config.appointment_query,
+      method: 'GET',
+      header: {
+        'Authorization': wx.getStorageSync('token'),
+        'content-type': "application/json"
+      },
+      success: function (res) {
+        console.log(res);
+        th.setData({ list: null })  // reset to null
+        let newList = [];
+        for (let i in res.data.data) {
+          // i = i.data.data;
+          var obj = res.data.data[i];
+          // console.log("i", res.data.data[i]);
+          var status;
+          if (obj.status == 1) status = '审批通过';
+          else if (obj.status == 0) status = '审批中';
+          else if (obj.status == 2) status = '审批不通过，原因：' + obj.comment;
+          let item = { date: obj.appointmentDate, numPeople: obj.accompanyingNum, state: status };
+          // console.log(item);
+          newList.push(item);
+        }
+        th.setData({ list: newList })
+        console.log("----------更新我的预约记录，成功-----------")
+        th.showModal({ msg: '已更新' })
+      },
+      fail: function (res) {
+        console.log("----------向后端请求预约记录列表请求，失败------------")
+        th.showModal({ msg: '获取失败，请重试' })
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  }
 })

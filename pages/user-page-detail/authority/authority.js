@@ -14,6 +14,13 @@ Page({
       url: '../../news-publish/news-publish',
     })
   },
+
+  jump_to_book_adm: function name(params) {
+    console.log('jump to news-publish page')
+    wx.navigateTo({
+      url: '../../book-adm/book-adm',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
