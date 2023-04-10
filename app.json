@@ -63,6 +63,7 @@
     "van-grid-item": "@vant/weapp/grid-item/index",
     "van-popup": "@vant/weapp/popup/index",
     "van-picker": "@vant/weapp/picker/index",
-    "van-image": "@vant/weapp/image/index"
+    "van-image": "@vant/weapp/image/index",
+    "van-dialog": "@vant/weapp/dialog/index"
   }
 }

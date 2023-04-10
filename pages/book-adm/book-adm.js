@@ -2,13 +2,36 @@
 const config = require('../../config')
 Page({
   data: {
-    list: [
-      { serialNum: '12', name: 'yky', date: '2023-4-19', numPeople: 1, phone: '12345678901', idCard: '111111222233449999' },
-      { serialNum: '19', name: 'ljl', date: '2023-4-23', numPeople: 4, phone: '12345678901', idCard: '111111222233449999' },
-      { serialNum: '20', name: '???', date: '2023-4-27', numPeople: 0, phone: '12345678901', idCard: '111111222233449999' }
-    ]
+    show: false,
+    comment: '',
+    my_event: '',
+    list: []
   },
-  //报错 
+
+  show_commet: function (e) {
+    this.setData({
+      show: true,
+      my_event: e
+    });
+  },
+
+  try_to_refuse(e) {
+    console.log(this.data.comment)
+    this.refuse(this.data.my_event)
+  },
+
+  bindKeyInput: function (e) {
+    this.setData({
+      comment: e.detail.value
+    })
+  },
+
+  onClose() {
+    this.setData({
+      show: false
+    });
+  },
+
   showModal(error) {
     wx.showModal({
       content: error.msg,
@@ -32,7 +55,9 @@ Page({
       },
       success: function (res) {
         console.log(res);
-        th.setData({ list: null })  // reset to null
+        th.setData({
+          list: null
+        }) // reset to null
         let newList = [];
         for (let i in res.data.data) {
           var obj = res.data.data[i];
@@ -46,13 +71,19 @@ Page({
           };
           newList.push(item);
         }
-        th.setData({ list: newList })
+        th.setData({
+          list: newList
+        })
         console.log("----------更新我的预约记录，成功-----------")
-        th.showModal({ msg: '已更新' })
+        th.showModal({
+          msg: '已更新'
+        })
       },
       fail: function (res) {
         console.log("----------向后端请求预约记录列表请求，失败------------")
-        th.showModal({ msg: '获取失败，请重试' })
+        th.showModal({
+          msg: '获取失败，请重试'
+        })
       }
     })
   },
@@ -72,28 +103,36 @@ Page({
     console.log(isApproval, serialNum)
     wx.request({
       url: config.appointment_justify,
-        method: 'POST',
-        header: {
-          'Authorization': wx.getStorageSync('token'),
-          'Content-Type': "application/x-www-form-urlencoded"
-        },
-        data: {
-          approval: isApproval,
-          id: serialNum,
-          comment: 'test'
-        },
-        success: (res) => {
-          console.log(res)
-          console.log('已更新预约状态', 20)
-          this.showModal({ msg: '已更新预约状态预约，刷新以获取最新列表' })
-          return true
-        },
-        fail: (res) => {
-          console.log(res)
-          console.log('未能成功更新预约状态', 40)
-          this.showModal({ msg: '失败，请重试' })
-          return false
-        }
+      method: 'POST',
+      header: {
+        'Authorization': wx.getStorageSync('token'),
+        'Content-Type': "application/x-www-form-urlencoded"
+      },
+      data: {
+        approval: isApproval,
+        id: serialNum,
+        comment: this.data.comment
+      },
+      success: (res) => {
+        console.log(res)
+        console.log('已更新预约状态', 20)
+        this.showModal({
+          msg: '已更新预约状态预约，刷新以获取最新列表'
+        })
+        this.setData({
+          comment: '',
+          my_event: ''
+        });
+        return true
+      },
+      fail: (res) => {
+        console.log(res)
+        console.log('未能成功更新预约状态', 40)
+        this.showModal({
+          msg: '失败，请重试'
+        })
+        return false
+      }
     })
   }
 })

@@ -19,10 +19,14 @@
       <view class="view_wenzi2_custom">
         <van-button round type="primary" bindtap='approve' data-serialNum='{{item.serialNum}}'>同意</van-button>
         <text>\n</text>
-        <van-button round type="default" bindtap='refuse' data-serialNum='{{item.serialNum}}'>拒绝</van-button>
+        <van-button round type="default" bindtap='show_commet' data-serialNum='{{item.serialNum}}'>拒绝</van-button>
       </view>
 
     </view>
   </block>
   <view class="text_last">-------------到底了哦 :) -------------</view>
 </view>
+
+<van-dialog use-slot title="拒绝原因" show="{{ show }}" show-cancel-button bind:confirm="try_to_refuse" bind:close="onClose">
+  <van-field name='comment' value='{{ comment }}' size='large' label='原因：' placeholder='输入拒绝原因' bind:blur="bindKeyInput" />
+</van-dialog>

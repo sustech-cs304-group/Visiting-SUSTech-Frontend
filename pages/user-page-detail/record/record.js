@@ -39,7 +39,11 @@ Page({
           // i = i.data.data;
           var obj = res.data.data[i];
           // console.log("i", res.data.data[i]);
-          let item = { date: obj.appointmentDate, numPeople: obj.accompanyingNum, state: obj.status };
+          var status;
+          if (obj.status == 1) status = '审批通过';
+          else if (obj.status == 0) status = '审批中';
+          else if (obj.status == 2) status = '审批不通过，原因：' + obj.comment;
+          let item = { date: obj.appointmentDate, numPeople: obj.accompanyingNum, state: status };
           // console.log(item);
           newList.push(item);
         }
