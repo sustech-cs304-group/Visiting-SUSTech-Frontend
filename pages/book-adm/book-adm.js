@@ -75,9 +75,9 @@ Page({
           list: newList
         })
         console.log("----------更新我的预约记录，成功-----------")
-        th.showModal({
-          msg: '已更新'
-        })
+        // th.showModal({
+        //   msg: '已更新'
+        // })
       },
       fail: function (res) {
         console.log("----------向后端请求预约记录列表请求，失败------------")
@@ -117,13 +117,22 @@ Page({
         console.log(res)
         console.log('已更新预约状态', 20)
         this.showModal({
-          msg: '已更新预约状态预约，刷新以获取最新列表'
+          msg: '已提交'
         })
-        this.setData({
-          comment: '',
-          my_event: ''
-        });
-        return true
+        if (res.data.code == 200) {
+          this.load()
+          this.setData({
+            comment: '',
+            my_event: ''
+          });
+          return true
+        } else {
+          console.log('未能成功更新预约状态', 40)
+          this.showModal({
+            msg: res.data.message
+          })
+          return false;
+        }
       },
       fail: (res) => {
         console.log(res)

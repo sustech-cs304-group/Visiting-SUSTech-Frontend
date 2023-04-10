@@ -2,14 +2,15 @@
 // import WxValidate from '../../utils/WxValidate'
 WxValidate = require('../../utils/WxValidate')
 const config = require('../../config')
+const app = getApp()
 
 Page({
   data: {
     // 好像这些暂时没啥用，用的还是wxml里面的表单
     // date: '2023-04-01',
-    // name: 'Visiter Joe',
-    // phone: '13600008888',
-    // idcard: '111111333355779999',
+    name: 'Visiter Joe',
+    phone: '13600008888',
+    idcard: '111111333355779999',
     // numTogether: '0',
     // purpose: '其他',
     date: '',
@@ -17,10 +18,14 @@ Page({
     isloading: false
   },
   onDisplay() {
-    this.setData({ show: true });
+    this.setData({
+      show: true
+    });
   },
   onClose() {
-    this.setData({ show: false });
+    this.setData({
+      show: false
+    });
   },
   formatDate(date) {
     date = new Date(date);
@@ -88,13 +93,29 @@ Page({
         },
         success: (res) => {
           console.log(res)
-          console.log('预约申请已上传到后端', 20)
-          this.showModal({ msg: '提交成功' })
-          return true
+          code = res.data.code
+          if (code == 200) {
+            console.log('预约申请已上传到后端', 20)
+            this.showModal({
+              msg: '提交成功',
+              code: 200
+            })
+            return true
+          } else {
+            console.log('服务端报错', 20)
+            this.showModal({
+              msg: res.data.message,
+              code: 400
+            })
+            return false
+          }
         },
         fail: (res) => {
           console.log('抱歉，预约申请上传到后端失败', 40)
-          this.showModal({ msg: '上传失败，请重试' })
+          this.showModal({
+            msg: '上传失败，请重试',
+            code: 400
+          })
           return false
         }
       })
@@ -116,11 +137,24 @@ Page({
     wx.showModal({
       content: error.msg,
       showCancel: false,
+      success(res) {
+        if (error.code == 200) {
+          console.log('jump to book page')
+          wx.switchTab({
+            url: '../main/main',
+          })
+        }
+      }
     })
   },
   // 初始化验证规则
   onLoad: function () {
     this.initValidate();
+    this.setData({
+      name: app.globalData.userInfo.name,
+      phone: app.globalData.userInfo.phone,
+      idcard: app.globalData.userInfo.id_card
+    })
   },
   initValidate() {
     // 初始化验证表单的正确性的实例
@@ -179,7 +213,3 @@ Page({
     }, '最小Array长度')
   }
 })
-
-
-
-

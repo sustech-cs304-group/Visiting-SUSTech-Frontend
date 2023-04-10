@@ -49,7 +49,7 @@ Page({
         }
         th.setData({ list: newList })
         console.log("----------更新我的预约记录，成功-----------")
-        th.showModal({ msg: '已更新' })
+        // th.showModal({ msg: '已更新' })
       },
       fail: function (res) {
         console.log("----------向后端请求预约记录列表请求，失败------------")

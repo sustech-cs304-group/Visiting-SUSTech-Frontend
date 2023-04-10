@@ -4,7 +4,7 @@
   <view class='weui-form__text-area'>
     <view class="weui-form__title">管理员预约审批</view>
   </view>
-  <button class="btn" bindtap="load" type="primary" size="mini">刷新列表</button>
+  <!-- <button class="btn" bindtap="load" type="primary" size="mini">刷新列表</button> -->
 
   <block wx:for="{{list}}" wx:key="index">
     <view class="view_tupian_wenzi" bindtap="click" id="{{index}}">
