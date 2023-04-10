@@ -71,6 +71,7 @@ App({
               that.globalData.userInfo.phone = res.data.data.phone;
               that.globalData.userInfo.id_card = res.data.data.identityCard;
               that.globalData.userInfo.gender = (res.data.data.gender==0)?'男':'女';
+              that.globalData.userInfo.type = res.data.data.type;
               wx.setStorageSync('isNew', false)
               console.log(that.globalData.userInfo.avatarUrl);
             }
@@ -111,7 +112,8 @@ App({
       avatarUrl: '/images/more/user.png',
       phone: '',
       id_card:'',
-      gender: ''
+      gender: '',
+      type:''
     },
     hasUserInfo: false,
   },

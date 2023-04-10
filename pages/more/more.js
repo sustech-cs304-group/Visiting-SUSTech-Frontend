@@ -13,7 +13,8 @@ Page({
       avatarUrl: '/images/more/user.png',
       phone: '',
       id_card:'',
-      gender: ''
+      gender: '',
+      type: ''
     },
     hasUserInfo: false,
     menuItems:[
