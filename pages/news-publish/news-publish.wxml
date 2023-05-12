@@ -1,13 +1,13 @@
 <van-cell-group>
-    <van-field size="large" model:value="{{ value }}" placeholder="发布新闻标题" border="{{ false }}" label="资讯标题" />
+    <van-field size="large" model:value="{{ value }}" placeholder="发布新闻标题" border="{{ false }}" label="资讯标题" bind:input="changeTitle" />
 </van-cell-group>
 <van-cell title="上传封面" size="large"/>
-<van-uploader file-list="{{ fileList }}" preview-size="150px"/>
+<van-uploader file-list="{{ fileList }}" preview-size="150px" bind:after-read="afterRead"/>
 <van-cell title="资讯内容" size="large"/>
-<van-field v-model="message" rows="1" autosize type="textarea" placeholder="请输入资讯内容" size="large"/>
+<van-field v-model="message" rows="1" autosize type="textarea" placeholder="请输入资讯内容" size="large" bind:input="changeContent"/>
 <view class="weui-form__opr-area">
-      <a aria-role="button" class="weui-btn weui-btn_primary">发布</a>
-    </view>
+    <a aria-role="button" class="weui-btn weui-btn_primary" bindtap="submit">发布</a>
+</view>
 <!-- <van-grid column-num="1" border="{{ false }}">
     <van-grid-item use-slot>
         <van-button type="primary">发布</van-button>

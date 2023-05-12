@@ -10,7 +10,9 @@
     "pages/news/news",
     "pages/book-req/book-req",
     "pages/book-adm/book-adm",
-    "pages/news-publish/news-publish"
+    "pages/news-publish/news-publish",
+    "pages/group/group",
+    "pages/group/post/post"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -34,7 +36,12 @@
       "text": "地图",
       "iconPath": "images/icons/map.png",
       "selectedIconPath": "images/icons/map_blue.png"
-    },{
+    }, {
+      "pagePath": "pages/group/group",
+      "text": "校园",
+      "iconPath": "images/icons/group.png",
+      "selectedIconPath": "images/icons/group_blue.png"
+    }, {
       "pagePath": "pages/more/more",
       "text": "个人",
       "iconPath": "images/icons/person.png",
@@ -64,6 +71,7 @@
     "van-popup": "@vant/weapp/popup/index",
     "van-picker": "@vant/weapp/picker/index",
     "van-image": "@vant/weapp/image/index",
-    "van-dialog": "@vant/weapp/dialog/index"
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-icon": "@vant/weapp/icon/index"
   }
 }

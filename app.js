@@ -120,5 +120,8 @@ App({
   update_avatar : config.update_avatar,
   update_person_info : config.update_person_info,
   query : config.query,
-  login : config.login
+  login : config.login,
+  submit_news: config.submit_news,
+  upload_image: config.upload_image,
+  load_news: config.load_news
 })

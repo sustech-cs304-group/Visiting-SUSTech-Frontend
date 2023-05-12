@@ -20,7 +20,8 @@ Page({
         "news_source_img": "../../images/icons/sustech.png",
         "news_title": "南方科技大学预约系统上线啦！",
         "news_time": "2019-05-01",
-        "news_cover": "../../images/main/sustech_1.JPG"
+        "news_cover": "../../images/main/sustech_1.JPG",
+        "content" : "test"
       },
     ]
   },
@@ -31,10 +32,14 @@ Page({
     })
   },
 
-  jump_to_news: function() {
-    console.log('jump to news')
+  jump_to_news: function(e) {
+    this.data.news.forEach(item => {
+        if (item.news_id == e.currentTarget.dataset.id) {
+          jump_to_news = item;
+        }
+    });
     wx.navigateTo({
-      url: '../news/news',
+      url: '../news/news?news=' + JSON.stringify(jump_to_news),
     })
   },
   switch_to_info_page: function(){
@@ -46,7 +51,40 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    // this.switch_to_info_page();
+    let that = this;
+    wx.request({
+      url: app.load_news,
+      method:'GET',
+      header: {
+        'Authorization': wx.getStorageSync('token'),
+        'Content-Type': "application/x-www-form-urlencoded"
+      },
+      success(res){
+        console.log(res);
+        receive_news = [];
+        array = res.data.data;
+        array.forEach(element => {
+          format_time = element.createTime.split('T')[0]
+          receive_news.push(
+            {
+              "news_id": element.id,
+              "news_source_id": 23,
+              "news_source_name": "南方科技大学",
+              "news_source_img": "../../images/icons/sustech.png",
+              "news_title": element.title,
+              "news_time": format_time,
+              "news_cover": element.pictureUrl,
+              "content": element.content
+            },
+          )
+        });
+        console.log(receive_news)
+        that.setData({'news': receive_news});
+      },
+      fail(res){
+        console.log(res);
+      }
+    })
   },
 
   /**
