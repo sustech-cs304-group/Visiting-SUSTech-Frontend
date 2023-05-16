@@ -38,13 +38,13 @@
                 </view>
             </van-col>
             <van-col span="5">
-                <view class='TDD-view'>
+                <view class='TDD-view' bindtap='zan' data-id="{{item.id}}">
                     <van-icon name="good-job-o" />
                     <label >点赞 </label>
                 </view>
             </van-col>
             <van-col span="5">
-                <view class='TDD-view'>
+                <view class='TDD-view' bindtap="showPopup" data-id="{{item.id}}">
                     <van-icon name="comment-o" />
                     <label >评论</label>
                 </view>
@@ -53,19 +53,30 @@
         </van-row>
         <!-- 时间、删除按钮、点赞评论按钮 -->
         
+        <van-popup show="{{ show }}" bind:close="onClose" overlay="{{false}}" position="bottom">
+          <van-cell-group>
+            <van-field
+              model:value="{{ comment }}"
+              placeholder="评论"
+              border="{{ false }}"
+              bind:input="changeContent"
+              bind:confirm="confirmComment"
+            />
+          </van-cell-group>
+        </van-popup>
 
         <!-- 点赞 -->
         <view class='zan-view'>
           <!-- 点赞 -->
           <view class='zan-bg-view'>
             <view class='zan-user-view' wx:for='{{item.zanSource}}'>
-              <label bindtap='TouchZanUser' data-name='{{item}}' class='zan-user'>{{item}},</label>
+              <label bindtap='TouchZanUser' data-name='{{item}}' class='zan-user'>{{item}} </label>
             </view>
           </view>
           <view class='line'></view>
           <!-- 评论 -->
           <view class='discuss-view'>
-            <view class='discuss' wx:for='{{item.contnet}}'>
+            <view class='discuss' wx:for='{{item.comment}}'>
               <label bindtap='TouchZanUser' data-name='{{item.firstname}}' class='discuss-user'>{{item.firstname}}：</label>
               <label class='content'>{{item.content}}</label>
             </view>

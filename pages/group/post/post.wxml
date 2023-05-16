@@ -1,9 +1,9 @@
 <!-- <van-cell title="分享这一刻" size="large" /> -->
-<van-field v-model="message" rows="1" autosize type="textarea" placeholder="分享这一刻" size="large" />
+<van-field v-model="message" rows="1" model:value="{{ content }}" autosize type="textarea" placeholder="分享这一刻" size="large" bind:input="changeContent" />
 <van-cell title="图片" size="large" />
-<van-uploader file-list="{{ fileList }}" preview-size="150px" />
+<van-uploader file-list="{{ fileList }}" preview-size="100px" bind:after-read="afterRead"/>
 <view class="weui-form__opr-area">
-    <a aria-role="button" class="weui-btn weui-btn_primary">发布</a>
+    <a aria-role="button" class="weui-btn weui-btn_primary" bindtap="submit">发布</a>
 </view>
 <!-- <van-grid column-num="1" border="{{ false }}">
     <van-grid-item use-slot>

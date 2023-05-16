@@ -60,7 +60,12 @@ Page({
             title: '提交',
             content: '发布成功',
             showCancel: false,
-            complete: (res) => {}
+            complete: (res) => {
+                console.log('jump to book page')
+                wx.switchTab({
+                  url: '../main/main',
+                })
+            }
           })
         } else {
           wx.showModal({

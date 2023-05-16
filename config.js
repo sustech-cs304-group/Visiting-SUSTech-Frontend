@@ -17,6 +17,10 @@ var bizlogic = {
   local_submit_news: prefix + '/news/create',
   local_upload_image: prefix + '/image/upload_image',
   local_load_news: prefix + '/news/list',
+  local_post_group: prefix + '/forum/add',
+  local_group_query: prefix + '/forum/query',
+  local_group_like: prefix + '/forumlike/add',
+  local_group_comment: prefix + '/comment/add',
   
   // 服务器地址 
   formal_update_avatar: '', 
@@ -42,6 +46,10 @@ if (bizlogic.isLocal == true) {
   submit_news = bizlogic.local_submit_news;
   upload_image = bizlogic.local_upload_image;
   load_news = bizlogic.local_load_news;
+  post_group = bizlogic.local_post_group;
+  group_query = bizlogic.local_group_query;
+  group_like = bizlogic.local_group_like;
+  group_comment = bizlogic.local_group_comment;
 } else {
   update_avatar = bizlogic.formal_update_avatar;
   update_person_info = bizlogic.formal_update_person_info;
@@ -59,5 +67,9 @@ module.exports = {
   appointment_justify : appointment_justify,
   submit_news: submit_news,
   upload_image: upload_image,
-  load_news: load_news
+  load_news: load_news,
+  post_group: post_group,
+  group_query: group_query,
+  group_like: group_like,
+  group_comment: group_comment
 }

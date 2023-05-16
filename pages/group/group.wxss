@@ -26,6 +26,7 @@ page{
   }
   
   .right-view{
+    width: 600rpx;
     /* background: red; */
   }
   

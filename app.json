@@ -72,6 +72,8 @@
     "van-picker": "@vant/weapp/picker/index",
     "van-image": "@vant/weapp/image/index",
     "van-dialog": "@vant/weapp/dialog/index",
-    "van-icon": "@vant/weapp/icon/index"
+    "van-icon": "@vant/weapp/icon/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index"
   }
 }
