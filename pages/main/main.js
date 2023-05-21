@@ -8,9 +8,9 @@ Page({
    */
   data: {
     sustech_imgs: [
-      "../../images/main/sustech_1.JPG",
-      "../../images/main/sustech_2.JPG",
-      "../../images/main/sustech_3.JPG"
+      "http://124.71.99.48:443/images/sustech_1.JPG",
+      "http://124.71.99.48:443/images/sustech_2.JPG",
+      "http://124.71.99.48:443/images/sustech_3.JPG"
     ],
     news: [
       {
@@ -33,6 +33,7 @@ Page({
   },
 
   jump_to_news: function(e) {
+    let jump_to_news = ''
     this.data.news.forEach(item => {
         if (item.news_id == e.currentTarget.dataset.id) {
           jump_to_news = item;
@@ -75,10 +76,10 @@ Page({
       },
       success(res){
         console.log(res);
-        receive_news = [];
-        array = res.data.data;
+        let receive_news = [];
+        let array = res.data.data;
         array.forEach(element => {
-          format_time = element.createTime.split('T')[0]
+          let format_time = element.createTime.split('T')[0]
           receive_news.push(
             {
               "news_id": element.id,

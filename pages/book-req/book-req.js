@@ -1,6 +1,6 @@
 // pages/book-req/book-req.js
 // import WxValidate from '../../utils/WxValidate'
-WxValidate = require('../../utils/WxValidate')
+let WxValidate = require('../../utils/WxValidate')
 const config = require('../../config')
 const app = getApp()
 
@@ -93,7 +93,7 @@ Page({
         },
         success: (res) => {
           console.log(res)
-          code = res.data.code
+          let code = res.data.code
           if (code == 200) {
             console.log('预约申请已上传到后端', 20)
             this.showModal({
