@@ -1,18 +1,23 @@
-// pages/map/map.js
+var QQMapWX = require('../../utils/qqmap-wx-jssdk.min');
+var qqmapsdk;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    longitude: 113.99745890567851,
+    latitude: 22.596228072936825
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    qqmapsdk = new QQMapWX({
+      key: '42CBZ-LNTCT-DJ4XT-VTRI2-J4HUQ-34FCZ'
+    });
+    this.getNowLocation();
   },
 
   /**
@@ -62,5 +67,17 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  getNowLocation(){
+    wx.getLocation({
+      type: 'gcj02',
+      success: (res) => {
+        console.log(res);
+        this.setData({
+          latitude: res.latitude,
+          longitude: res.longitude
+        })
+      }
+    })
   }
 })
