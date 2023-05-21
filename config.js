@@ -1,4 +1,4 @@
-var prefix = 'https://10.15.118.147:443'
+var prefix = 'http://124.71.99.48:443'
 
 var bizlogic = {
   // 是否是本地
@@ -31,7 +31,17 @@ var bizlogic = {
 var update_avatar= '',
 update_person_info = '',
 query ='',
-login = ''
+login = '',
+appointment_add = '',
+appointment_query = '',
+appointment_justify = '',
+submit_news = '',
+upload_image = '',
+load_news = '',
+post_group = '',
+group_query = '',
+group_like = '',
+group_comment = ''
 ;
  
 // 判断是否是本地

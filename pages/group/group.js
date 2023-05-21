@@ -70,11 +70,11 @@ Page({
       data: {},
       success(res) {
         that.data.DataSource = []
-        receive_data = res.data.data
+        let receive_data = res.data.data
         console.log(receive_data.imgOrRadio);
         console.log(receive_data);
         receive_data.forEach(item => {
-          t = item.createDate.split('T')[1].substring(0, 5)
+          let t = item.createDate.split('T')[1].substring(0, 5)
           console.log(item.imgOrRadio)
           let group = {
               id: item.id,

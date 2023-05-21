@@ -44,3 +44,8 @@
 .btn .btn-active {
   opacity: .6;
 }
+
+.value_class {
+  min-width: 480rpx;
+  text-align: left !important;
+}
