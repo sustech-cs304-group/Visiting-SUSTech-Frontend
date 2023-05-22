@@ -8,9 +8,9 @@ Page({
    */
   data: {
     sustech_imgs: [
-      "http://124.71.99.48:443/images/sustech_1.JPG",
-      "http://124.71.99.48:443/images/sustech_2.JPG",
-      "http://124.71.99.48:443/images/sustech_3.JPG"
+      app.group_images + "sustech_1.JPG",
+      app.group_images + "sustech_2.JPG",
+      app.group_images + "sustech_3.JPG"
     ],
     news: [
       {
