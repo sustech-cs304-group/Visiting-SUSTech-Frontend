@@ -1,3 +1,5 @@
+const app = getApp()
+
 module.exports = [
   {
         "id": 1,
@@ -6,7 +8,7 @@ module.exports = [
         "longitude": "113.99694174088825",
         "latitude": "22.594629937210232",
         "discrption": " 次教学楼，有两层半，以机房为主，计算机系课程的实验课部分安排于此。一楼南侧为新成立的慕课中心，二楼南侧为艺术中心教室。",
-        "image": "../images/building/二教.jpg"
+        "image": app.group_images + "二教.jpg"
     },
     {
         "id" : 2,
@@ -15,7 +17,7 @@ module.exports = [
         "longitude": "113.99745890567851",
         "latitude": "22.596228072936825",
         "discrption": "主教学楼，分为南、北两部分，分别为教学实验室区域和多媒体教室区域。",
-        "image": "../images/building/一教.jpg"
+        "image": app.group_images + "一教.jpg"
     },
     {
         "id":3,
@@ -24,7 +26,7 @@ module.exports = [
         "longitude": "113.99952545228825",
         "latitude": "22.595955901471346",
         "discrption": "第三教学楼位于南科大中心东侧，为5层建筑，一共56间教室，教室总使用面积5800平。简洁的教学楼外观里面是清新的配色，驻足走廊便宛如置身画廊，肃静中带着些许活泼。该教学楼以智慧教室为主，一、二楼为阶梯教室及混合教学教室，三楼为授课型教室，四楼为研讨型教室，五楼为教学机房。另外还有两处师生休闲学习的泛在空间。",
-        "image": "../images/building/三教.jpg"
+        "image": app.group_images + "三教.jpg"
     },
     {
         "id": 4,
@@ -33,7 +35,7 @@ module.exports = [
         "longitude": "113.99669176363204",
         "latitude": "22.596396772513913",
         "discrption":"第一科研楼是目前南科大建成的最大的科研楼，共有五层，主要供理学院的师生提供科研场所，由于新的理学院大楼简称，科研场地的紧张有所缓解。",
-        "image": "../images/building/第一科研楼.jpg"
+        "image": app.group_images + "第一科研楼.jpg"
     },
     {
         "id": 5,
@@ -42,7 +44,7 @@ module.exports = [
         "longitude": "113.99622166279755",
         "latitude": "22.595796932281235",
         "discrption":"第二科研楼在第一科研楼和生物楼中间，一层有学者咖啡，其他楼层主要由生命科学学院的实验室和办公室组成。",
-        "image": "../images/building/第二科研楼.jpg"
+        "image": app.group_images + "第二科研楼.jpg"
     },
     {
         "id": 6,
@@ -51,7 +53,7 @@ module.exports = [
         "longitude": "113.99581586825491",
         "latitude": "22.594717008465523",
         "discrption":"台州楼由台州市人民政府冠名，位于生物楼的西南侧。台州·深圳创新中心位于南科大台州楼，是市委、市政府与南科大共建的跨区域创新联合体。主要由医学院的实验室和办公室组成。",
-        "image": "../images/building/台州楼.jpg"
+        "image": app.group_images + "台州楼.jpg"
     },
     {
         "id": 7,
@@ -60,7 +62,7 @@ module.exports = [
         "longitude": "113.99862717427243",
         "latitude": "22.59916234231847",
         "discrption":"湖畔宿舍区又称书院宿舍区，正式名称为“学生公寓”，位于南方科技大学无名湖西侧，共有宿舍楼6栋，湖畔有4间单层建筑，其中3间为活动室、1间为健身房+舞蹈房。湖畔是本科生的主要活动区域之一。",
-        "image": "../images/building/湖畔宿舍.jpg"
+        "image": app.group_images + "湖畔宿舍.jpg"
     },
     {
         "id": 8,
@@ -69,7 +71,7 @@ module.exports = [
         "longitude": "113.99873831012724",
         "latitude": "22.599699453456157",
         "discrption":"湖畔宿舍区又称书院宿舍区，正式名称为“学生公寓”，位于南方科技大学无名湖西侧，共有宿舍楼6栋，湖畔有4间单层建筑，其中3间为活动室、1间为健身房+舞蹈房。湖畔是本科生的主要活动区域之一。",
-        "image": "../images/building/湖畔宿舍.jpg"
+        "image": app.group_images + "湖畔宿舍.jpg"
     },
     {
         "id": 9,
@@ -78,7 +80,7 @@ module.exports = [
         "longitude": "113.99866004473961",
         "latitude": "22.600169814191705",
         "discrption":"湖畔宿舍区又称书院宿舍区，正式名称为“学生公寓”，位于南方科技大学无名湖西侧，共有宿舍楼6栋，湖畔有4间单层建筑，其中3间为活动室、1间为健身房+舞蹈房。湖畔是本科生的主要活动区域之一。",
-        "image": "../images/building/湖畔宿舍.jpg"
+        "image": app.group_images + "湖畔宿舍.jpg"
     },
     {
         "id": 10,
@@ -87,7 +89,7 @@ module.exports = [
         "longitude": "113.99890337506758",
         "latitude": "22.600658463667408",
         "discrption":"湖畔宿舍区又称书院宿舍区，正式名称为“学生公寓”，位于南方科技大学无名湖西侧，共有宿舍楼6栋，湖畔有4间单层建筑，其中3间为活动室、1间为健身房+舞蹈房。湖畔是本科生的主要活动区域之一。",
-        "image": "../images/building/湖畔宿舍.jpg"
+        "image": app.group_images + "湖畔宿舍.jpg"
     },
     {
         "id": 11,
@@ -96,7 +98,7 @@ module.exports = [
         "longitude": "113.99929228767576",
         "latitude": "22.6009800689365",
         "discrption":"湖畔宿舍区又称书院宿舍区，正式名称为“学生公寓”，位于南方科技大学无名湖西侧，共有宿舍楼6栋，湖畔有4间单层建筑，其中3间为活动室、1间为健身房+舞蹈房。湖畔是本科生的主要活动区域之一。",
-        "image": "../images/building/湖畔宿舍.jpg"
+        "image": app.group_images + "湖畔宿舍.jpg"
     },
     {
         "id": 12,
@@ -105,7 +107,7 @@ module.exports = [
         "longitude": "113.9996104889367",
         "latitude": "22.600700704369967",
         "discrption":"湖畔宿舍区又称书院宿舍区，正式名称为“学生公寓”，位于南方科技大学无名湖西侧，共有宿舍楼6栋，湖畔有4间单层建筑，其中3间为活动室、1间为健身房+舞蹈房。湖畔是本科生的主要活动区域之一。",
-        "image": "../images/building/湖畔宿舍.jpg"
+        "image": app.group_images + "湖畔宿舍.jpg"
     },
     {
         "id": 13,
@@ -114,7 +116,7 @@ module.exports = [
         "longitude": "113.99735733577063",
         "latitude": "22.60186566810214",
         "discrption":"二期宿舍位于荔园南侧，是目前南科大最大的宿舍区域，二期宿舍有7到17栋，并且拥有食堂、活动室、快递收发室、超市等配套设置。",
-        "image": "../images/building/二期宿舍.jpg"
+        "image": app.group_images + "二期宿舍.jpg"
     },
     {
         "id": 14,
@@ -123,7 +125,7 @@ module.exports = [
         "longitude": "113.99733794096903",
         "latitude": "22.6013440280076",
         "discrption":"二期宿舍位于荔园南侧，是目前南科大最大的宿舍区域，二期宿舍有7到17栋，并且拥有食堂、活动室、快递收发室、超市等配套设置。",
-        "image": "../images/building/二期宿舍.jpg"
+        "image": app.group_images + "二期宿舍.jpg"
     },
     {
         "id": 15,
@@ -132,7 +134,7 @@ module.exports = [
         "longitude": "113.99796946225888",
         "latitude": "22.601673781201512",
         "discrption":"二期宿舍位于荔园南侧，是目前南科大最大的宿舍区域，二期宿舍有7到17栋，并且拥有食堂、活动室、快递收发室、超市等配套设置。",
-        "image": "../images/building/二期宿舍.jpg"
+        "image": app.group_images + "二期宿舍.jpg"
     },
     {
         "id": 16,
@@ -141,7 +143,7 @@ module.exports = [
         "longitude": "113.99844182345373",
         "latitude": "22.602076857651845",
         "discrption":"二期宿舍位于荔园南侧，是目前南科大最大的宿舍区域，二期宿舍有7到17栋，并且拥有食堂、活动室、快递收发室、超市等配套设置。",
-        "image": "../images/building/二期宿舍.jpg"
+        "image": app.group_images + "二期宿舍.jpg"
     },
     {
       "id": 17,
@@ -150,7 +152,7 @@ module.exports = [
         "longitude": "113.99918936758638",
         "latitude": "22.602211882991554",
         "discrption":"二期宿舍位于荔园南侧，是目前南科大最大的宿舍区域，二期宿舍有7到17栋，并且拥有食堂、活动室、快递收发室、超市等配套设置。",
-        "image": "../images/building/二期宿舍.jpg"
+        "image": app.group_images + "二期宿舍.jpg"
     },
     {
       "id": 18,
@@ -159,7 +161,7 @@ module.exports = [
         "longitude": "113.99977656888905",
         "latitude": "22.602626960105372",
         "discrption":"二期宿舍位于荔园南侧，是目前南科大最大的宿舍区域，二期宿舍有7到17栋，并且拥有食堂、活动室、快递收发室、超市等配套设置。",
-        "image": "../images/building/二期宿舍.jpg"
+        "image": app.group_images + "二期宿舍.jpg"
     },
     {
       "id": 19,
@@ -168,7 +170,7 @@ module.exports = [
         "longitude": "113.99949055199374",
         "latitude": "22.60167878217501",
         "discrption":"二期宿舍位于荔园南侧，是目前南科大最大的宿舍区域，二期宿舍有7到17栋，并且拥有食堂、活动室、快递收发室、超市等配套设置。",
-        "image": "../images/building/二期宿舍.jpg"
+        "image": app.group_images + "二期宿舍.jpg"
     },
     {
       "id": 20,
@@ -177,7 +179,7 @@ module.exports = [
         "longitude": "114.0000907540225",
         "latitude": "22.60180380604366",
         "discrption":"二期宿舍位于荔园南侧，是目前南科大最大的宿舍区域，二期宿舍有7到17栋，并且拥有食堂、活动室、快递收发室、超市等配套设置。",
-        "image": "../images/building/二期宿舍.jpg"
+        "image": app.group_images + "二期宿舍.jpg"
     },
     {
       "id": 21,
@@ -186,7 +188,7 @@ module.exports = [
         "longitude": "114.0003529361868",
         "latitude": "22.602262892600848",
         "discrption":"二期宿舍位于荔园南侧，是目前南科大最大的宿舍区域，二期宿舍有7到17栋，并且拥有食堂、活动室、快递收发室、超市等配套设置。",
-        "image": "../images/building/二期宿舍.jpg"
+        "image": app.group_images + "二期宿舍.jpg"
     },
     {
       "id": 22,
@@ -195,7 +197,7 @@ module.exports = [
         "longitude": "114.00083179777687",
         "latitude": "22.60247793258319",
         "discrption":"二期宿舍位于荔园南侧，是目前南科大最大的宿舍区域，二期宿舍有7到17栋，并且拥有食堂、活动室、快递收发室、超市等配套设置。",
-        "image": "../images/building/二期宿舍.jpg"
+        "image": app.group_images + "二期宿舍.jpg"
     },
     {
       "id": 23,
@@ -204,7 +206,7 @@ module.exports = [
         "longitude": "114.00092930351002",
         "latitude": "22.602935016442217",
         "discrption":"二期宿舍位于荔园南侧，是目前南科大最大的宿舍区域，二期宿舍有7到17栋，并且拥有食堂、活动室、快递收发室、超市等配套设置。",
-        "image": "../images/building/二期宿舍.jpg"
+        "image": app.group_images + "二期宿舍.jpg"
     },
     {
       "id": 24,
@@ -213,7 +215,7 @@ module.exports = [
         "longitude": "114.00256598932413",
         "latitude": "22.59868248188398",
         "discrption":"专家公寓共两栋，位于教师公寓南边，提供宾馆住宿服务。 住宿服务不对社会开放，一般需要校内学生或员工卡才能登记入住。2016年前标间为120元/晚，2016年后提价为220元/晚，2022年为320元/晚，令许多有需要的师生改为订校外酒店。家长及来宾一般亦下榻专家公寓，但是专家公寓时常客满。据悉，专家公寓大量房间已经改为行政办公空间，可能是导致专家公寓房源紧张的重要因素。订房电话：0755-86664284",
-        "image": "../images/building/教师公寓.jpg"
+        "image": app.group_images + "教师公寓.jpg"
     },
     {
       "id": 25,
@@ -222,7 +224,7 @@ module.exports = [
         "longitude": "114.0031585562798",
         "latitude": "22.59886916406628",
         "discrption":"专家公寓共两栋，位于教师公寓南边，提供宾馆住宿服务。 住宿服务不对社会开放，一般需要校内学生或员工卡才能登记入住。2016年前标间为120元/晚，2016年后提价为220元/晚，2022年为320元/晚，令许多有需要的师生改为订校外酒店。家长及来宾一般亦下榻专家公寓，但是专家公寓时常客满。据悉，专家公寓大量房间已经改为行政办公空间，可能是导致专家公寓房源紧张的重要因素。订房电话：0755-86664284",
-        "image": "../images/building/教师公寓.jpg"
+        "image": app.group_images + "教师公寓.jpg"
     },
     {
       "id": 26,
@@ -231,7 +233,7 @@ module.exports = [
         "longitude": "114.00218860435302",
         "latitude": "22.599874205611833",
         "discrption":"教师公寓是南科大教室及其家属的住宅区域，配套设施包括教师餐厅、茶餐厅、西餐厅、南科大幼儿园、面包房等。",
-        "image": "../images/building/教师公寓.jpg"
+        "image": app.group_images + "教师公寓.jpg"
     },
     {
       "id": 27,
@@ -240,7 +242,7 @@ module.exports = [
         "longitude": "114.00283726256669",
         "latitude": "22.600225092873067",
         "discrption":"教师公寓是南科大教室及其家属的住宅区域，配套设施包括教师餐厅、茶餐厅、西餐厅、南科大幼儿园、面包房等。",
-        "image": "../images/building/教师公寓.jpg"
+        "image": app.group_images + "教师公寓.jpg"
     },
     {
       "id": 28,
@@ -249,7 +251,7 @@ module.exports = [
         "longitude": "114.00230139591486",
         "latitude": "22.599576961048523",
         "discrption":"教师公寓是南科大教室及其家属的住宅区域，配套设施包括教师餐厅、茶餐厅、西餐厅、南科大幼儿园、面包房等。",
-        "image": "../images/building/教师公寓.jpg"
+        "image": app.group_images + "教师公寓.jpg"
     },
     {
       "id": 29,
@@ -258,7 +260,7 @@ module.exports = [
         "longitude": "114.00278225888258",
         "latitude": "22.599750585709256",
         "discrption":"教师公寓是南科大教室及其家属的住宅区域，配套设施包括教师餐厅、茶餐厅、西餐厅、南科大幼儿园、面包房等。",
-        "image": "../images/building/教师公寓.jpg"
+        "image": app.group_images + "教师公寓.jpg"
     },
     {
       "id": 30,
@@ -267,7 +269,7 @@ module.exports = [
         "longitude": "114.00236671227185",
         "latitude": "22.59906960135431",
         "discrption":"教师公寓是南科大教室及其家属的住宅区域，配套设施包括教师餐厅、茶餐厅、西餐厅、南科大幼儿园、面包房等。",
-        "image": "../images/building/教师公寓.jpg"
+        "image": app.group_images + "教师公寓.jpg"
     },
     {
       "id": 31,
@@ -276,7 +278,7 @@ module.exports = [
         "longitude": "114.00295793720852",
         "latitude": "22.599251024259498",
         "discrption":"教师公寓是南科大教室及其家属的住宅区域，配套设施包括教师餐厅、茶餐厅、西餐厅、南科大幼儿园、面包房等。",
-        "image": "../images/building/教师公寓.jpg"
+        "image": app.group_images + "教师公寓.jpg"
     },
     {
       "id": 32,
@@ -285,7 +287,7 @@ module.exports = [
         "longitude": "114.00264673674144",
         "latitude": "22.608082423543618",
         "discrption": "欣园（英语：Joy Highland ）宿舍区位于南方科技大学南科二路最北端，共有宿舍楼5栋要有面点、炒菜、麻辣烫等窗口供同学们选择。",
-        "image": "../images/building/欣园宿舍.jpg"
+        "image": app.group_images + "欣园宿舍.jpg"
     },
     {
       "id": 33,
@@ -294,7 +296,7 @@ module.exports = [
         "longitude": "114.00234121871767",
         "latitude": "22.608221443531473",
         "discrption": "欣园（英语：Joy Highland ）宿舍区位于南方科技大学南科二路最北端，共有宿舍楼5栋",
-        "image": "../images/building/欣园宿舍.jpg"
+        "image": app.group_images + "欣园宿舍.jpg"
     },
     {
       "id": 34,
@@ -303,7 +305,7 @@ module.exports = [
         "longitude": "114.00215270760555",
         "latitude": "22.60846647850469",
         "discrption": "欣园（英语：Joy Highland ）宿舍区位于南方科技大学南科二路最北端，共有宿舍楼5栋",
-        "image": "../images/building/欣园宿舍.jpg"
+        "image": app.group_images + "欣园宿舍.jpg"
     },
     {
       "id": 35,
@@ -312,7 +314,7 @@ module.exports = [
         "longitude": "114.00188835867016",
         "latitude": "22.60863750265234",
         "discrption": "欣园（英语：Joy Highland ）宿舍区位于南方科技大学南科二路最北端，共有宿舍楼5栋",
-        "image": "../images/building/欣园宿舍.jpg"
+        "image": app.group_images + "欣园宿舍.jpg"
     },
     {
       "id": 36,
@@ -321,7 +323,7 @@ module.exports = [
         "longitude": "114.00188835867016",
         "latitude": "22.60863750265234",
         "discrption": "欣园（英语：Joy Highland ）宿舍区位于南方科技大学南科二路最北端，共有宿舍楼5栋",
-        "image": "../images/building/欣园宿舍.jpg"
+        "image": app.group_images + "欣园宿舍.jpg"
     },
     {
       "id": 37,
@@ -330,7 +332,7 @@ module.exports = [
         "longitude": "113.99986196296686",
         "latitude": "22.600081700794405",
         "discrption" : "九华精舍位于二期宿舍南侧，是一片别墅区域，据传闻为院士提供住宅区域，该区域为封闭区域，不允许进入参观。",
-        "image": "../images/building/九华精舍.jpg"
+        "image": app.group_images + "九华精舍.jpg"
     },
     {
       "id": 38,
@@ -339,7 +341,7 @@ module.exports = [
         "longitude": "113.99957457305925",
         "latitude": "22.59258676607465",
         "discrption" : "1号门是南方科技大学的正门，向南约一公里就是深圳地铁5号线塘朗站C口。1号门进门正对理学院的建筑，左侧可望见南科大会议中心。2023年5月的入校规则为，持卡刷卡入校，校外人员需要预约或由校内人员邀请入校。",
-        "image": "../images/building/1号门.jpg"
+        "image": app.group_images + "1号门.jpg"
     },
     {
       "id": 39,
@@ -348,7 +350,7 @@ module.exports = [
         "longitude": "114.00224426717534",
         "latitude": "22.5942938327658",
         "discrption" : "2号门目前用于施工车辆进出，暂未开放。",
-        "image": "../images/building/2号门.jpg"
+        "image": app.group_images + "2号门.jpg"
     },
     {
       "id": 40,
@@ -357,7 +359,7 @@ module.exports = [
         "longitude": "114.00541460446789",
         "latitude": "22.596541951558102",
         "discrption" : "3号门在专家公寓南侧，是目前距离深圳地铁5号线长岭皮地铁站最近的校门。",
-        "image": "../images/building/3号门.jpg"
+        "image": app.group_images + "3号门.jpg"
     },
     {
       "id": 41,
@@ -366,7 +368,7 @@ module.exports = [
         "longitude": "114.00753083426207",
         "latitude": "22.596939951384236",
         "discrption" : "4号门目前用于施工车辆进出，暂未开放。",
-        "image": "../images/building/4号门.jpg"
+        "image": app.group_images + "4号门.jpg"
     },
     {
       "id": 42,
@@ -375,7 +377,7 @@ module.exports = [
         "longitude": "113.99486730308354",
         "latitude": "22.602224742297313",
         "discrption" : "5号门目前用于施工车辆进出，仅对外卖人员开放。",
-        "image": "../images/building/5号门.jpg"
+        "image": app.group_images + "5号门.jpg"
     },
     {
       "id": 43,
@@ -384,7 +386,7 @@ module.exports = [
         "longitude": "113.99658599836494",
         "latitude": "22.596958453960035",
         "discrption" : "6号门是距离第一教学楼最近的校门，设有外卖柜。",
-        "image": "../images/building/6号门.jpg"
+        "image": app.group_images + "6号门.jpg"
     },
     {
       "id": 44,
@@ -393,7 +395,7 @@ module.exports = [
         "longitude": "113.99520073165434",
         "latitude": "22.5945201103831",
         "discrption" : "7号门是距离台州楼最近的校门，设有外卖柜。",
-        "image": "../images/building/7号门.jpg"
+        "image": app.group_images + "7号门.jpg"
     },
     // {
     //   "id": 45,
@@ -409,7 +411,7 @@ module.exports = [
         "longitude": "113.99937800217003",
         "latitude": "22.60093507450979",
         "discrption" : "快递收发室一般在8:00-13:00和14:00-19:00开门，这个快递点目前有自动寄取快递柜。",
-        "image": "../images/building/5栋快递收发室.jpg"
+        "image": app.group_images + "5栋快递收发室.jpg"
     },
     {
       "id": 47,
@@ -418,7 +420,7 @@ module.exports = [
         "longitude": "113.99762928723294",
         "latitude": "22.601735065097706",
         "discrption" : "快递收发室一般在8:00-13:00和14:00-19:00开门，这个快递点目前有自动寄取快递柜，位于收发室东侧。",
-        "image": "../images/building/8栋快递收发室.jpg"
+        "image": app.group_images + "8栋快递收发室.jpg"
     },
     {
       "id": 48,
@@ -427,7 +429,7 @@ module.exports = [
         "longitude": "113.99983747733154",
         "latitude": "22.605432935298257",
         "discrption" : "快递收发室一般在8:00-13:00和14:00-19:00开门，这个快递点目前没有自动寄取快递柜。",
-        "image": "../images/building/荔园快递收发室.jpg"
+        "image": app.group_images + "荔园快递收发室.jpg"
     },
     {
       "id": 49,
@@ -436,7 +438,7 @@ module.exports = [
         "longitude": "113.99940599705167",
         "latitude": "22.601677021907186",
         "discrption" : "快递收发室一般在8:00-13:00和14:00-19:00开门，这个快递点目前没有自动寄取快递柜。",
-        "image": "../images/building/13栋快递收发室.jpg"
+        "image": app.group_images + "13栋快递收发室.jpg"
     },
     {
       "id": 50,
@@ -445,7 +447,7 @@ module.exports = [
         "longitude": "113.99871746928886",
         "latitude": "22.60006746269873",
         "discrption" : "从2023年春季学期开始由“全家福”承包，商品齐全，是同学们的生活物资补给站。",
-        "image": "../images/building/湖畔超市.jpg"
+        "image": app.group_images + "湖畔超市.jpg"
     },
     {
       "id": 51,
@@ -454,7 +456,7 @@ module.exports = [
         "longitude": "113.99965991802287",
         "latitude": "22.604330126097672",
         "discrption" : "从2023年春季学期开始由“全家福”承包，商品齐全，是同学们的生活物资补给站。",
-        "image": "../images/building/荔园超市.jpg"
+        "image": app.group_images + "荔园超市.jpg"
     },
     {
       "id": 52,
@@ -463,7 +465,7 @@ module.exports = [
         "longitude": "113.99954050636211",
         "latitude": "22.60160061799798",
         "discrption" : "13栋超市是离二期宿舍最近的超市，商品种类丰富，是同学们的生活物资补给站",
-        "image": "../images/building/13栋超市.jpg"
+        "image": app.group_images + "13栋超市.jpg"
     },
     {
       "id": 53,
@@ -490,7 +492,7 @@ module.exports = [
         "longitude": "113.99825620625973",
         "latitude": "22.597581379361316",
         "discrption": "南方科技大学图书馆拥有三处馆舍。一丹图书馆于2020年12月启用，南科大中心建筑之一，馆舍共四层，面积为从续借9,010㎡，可使用座位约1000个。馆内设有休闲阅览区、安静学习区、协作学习区、电脑区、讨论间、培训教室、放映厅、报告厅等多元化空间。一丹图书馆于2020年启用，馆舍共四层，位于南科大中心。",
-        "image": "../images/building/一丹.jpg"
+        "image": app.group_images + "一丹.jpg"
     },
     {
       "id": 56,
@@ -499,7 +501,7 @@ module.exports = [
         "longitude": "113.99868964152915",
         "latitude": "22.595132842553802",
         "discrption": "南方科技大学图书馆拥有三处馆舍。琳恩图书馆于2013年9月投入使用，三层单体建筑，面积为10，000㎡。馆内设有休闲阅览区、安静学习区、协作学习区、电脑区、讨论间、培训教室、放映厅、报告厅等多元化空间。",
-        "image": "../images/building/lynn.jpg"
+        "image": app.group_images + "lynn.jpg"
     },
     {
       "id": 57,
@@ -508,7 +510,7 @@ module.exports = [
         "longitude": "113.99716680643155",
         "latitude": "22.6018457830662",
         "discrption": "南方科技大学图书馆拥有三处馆舍。涵泳图书馆于2020年11月启用，位于研究生宿舍可再续区，面积为1，200㎡。馆内设有休闲阅览区、安静学习区、协作学习区、电脑区、讨论间、培训教室、放映厅、报告厅等多元化空间。",
-        "image": "../images/building/涵泳.jpg"
+        "image": app.group_images + "涵泳.jpg"
     },
     {
       "id": 58,
@@ -517,7 +519,7 @@ module.exports = [
         "longitude": "113.9996388722617",
         "latitude": "22.604836496172695",
         "discrption": "荔园食堂共有两层。一层食堂提供早餐、大众菜和粤式卤水套餐，节假日和周末关闭。二层食堂提供大众菜、粉面、粤式卤水套餐、烤肉饭等，无早餐提供",
-        "image": "../images/building/荔园食堂.jpg"
+        "image": app.group_images + "荔园食堂.jpg"
     },
     {
       "id": 59,
@@ -526,7 +528,7 @@ module.exports = [
         "longitude": "113.9978655128582",
         "latitude": "22.59665543315432",
         "discrption": "湖畔食堂，也因毗邻大榕树被称为大榕树食堂。位于第一教学楼北侧，此前曾有两层楼提供就餐服务，目前仅有一层开放，旁边是中心食堂。有大众菜和外包的日式饭，在2023年5月大众菜窗口也改由外包承担，提供更加丰富的菜品，价格也有上升。",
-        "image": "../images/building/湖畔食堂.jpg"
+        "image": app.group_images + "湖畔食堂.jpg"
     },
     {
       "id": 60,
@@ -535,7 +537,7 @@ module.exports = [
         "longitude": "113.99779286108992",
         "latitude": "22.59756694227117",
         "discrption": "中心食堂是全南科大目前面积最大，就餐人数最多的食堂。位于第一教学楼北侧，旁边是湖畔食堂。该食堂窗口众多，不仅有大众菜、粤式卤水套餐、小炒菜、粉面粥、韩式石锅拌饭等，还有外包的肯德基和面点王，以及小卖部。",
-        "image": "../images/building/中心食堂.jpg"
+        "image": app.group_images + "中心食堂.jpg"
     },
     {
       "id": 61,
@@ -544,7 +546,7 @@ module.exports = [
         "longitude": "113.99854770927413",
         "latitude": "22.602086754910225",
         "discrption" : "",
-        "image": "../images/building/第一学生食堂.jpg"
+        "image": app.group_images + "第一学生食堂.jpg"
     },
     // {
     //   "id": 62,
@@ -605,7 +607,7 @@ module.exports = [
         "longitude": "113.99563371152476",
         "latitude": "22.600020825281927",
         "discrption": "2020年10月17日，启用仪式在新落成的工学院大楼里隆重举行。工学院是南科大成立的第一个学院，工学院新大楼总建筑面积11.5万平方米，由南、北两栋建筑组成。其中，南楼九层，建筑平面呈C型，建筑高度42.3米，总建筑面积约47000平方米。北楼十层，建筑平面呈U型，建筑髙度46.8米，总建筑面积约67000平方米。南北楼共用地下室一层，面积近2万平方米，约有停车位350个。工学院大楼整体设计充分考虑地形特点，采用西高东低、北高南低的形式，设计主要为科研用房，主体为各类科研实验室及办公室，此外还包括有面积600平米的工学院协作中心，可容纳近200人的报告厅等公共会议中心。南楼主门厅及二楼室外平台不仅提升了大楼内部空间的现代感，更为广大师生提供了沟通交流的休闲场所。大楼内部均设计有竖向的中庭，保证每两个学系可以共享一个核心交通空间，既利于系间交流，也增添了走廊空间的乐趣。工学院大楼目前即将入驻八个系(院)。其中，北楼有材料系、力学系、机械系和环境学院，南楼有电子系、海洋系、生医工系和计算机系。",
-        "image": "../images/building/工学院.jpg"
+        "image": app.group_images + "工学院.jpg"
     },
     {
       "id": 70,
@@ -614,7 +616,7 @@ module.exports = [
         "longitude": "113.99539435532506",
         "latitude": "22.60108493541513",
         "discrption": "2020年10月17日，启用仪式在新落成的工学院大楼里隆重举行。工学院是南科大成立的第一个学院，工学院新大楼总建筑面积11.5万平方米，由南、北两栋建筑组成。其中，南楼九层，建筑平面呈C型，建筑高度42.3米，总建筑面积约47000平方米。北楼十层，建筑平面呈U型，建筑髙度46.8米，总建筑面积约67000平方米。南北楼共用地下室一层，面积近2万平方米，约有停车位350个。工学院大楼整体设计充分考虑地形特点，采用西高东低、北高南低的形式，设计主要为科研用房，主体为各类科研实验室及办公室，此外还包括有面积600平米的工学院协作中心，可容纳近200人的报告厅等公共会议中心。南楼主门厅及二楼室外平台不仅提升了大楼内部空间的现代感，更为广大师生提供了沟通交流的休闲场所。大楼内部均设计有竖向的中庭，保证每两个学系可以共享一个核心交通空间，既利于系间交流，也增添了走廊空间的乐趣。工学院大楼目前即将入驻八个系(院)。其中，北楼有材料系、力学系、机械系和环境学院，南楼有电子系、海洋系、生医工系和计算机系。",
-        "image": "../images/building/工学院.jpg"
+        "image": app.group_images + "工学院.jpg"
     },
     {
       "id": 71,
@@ -623,7 +625,7 @@ module.exports = [
         "longitude": "113.99926152631747",
         "latitude": "22.594195942778356",
         "discrption": "2023年4月7日上午，理学院大楼启用仪式在理学院大楼举行。理学院大楼历时5年多建成，总建筑面积约为6.6万平方米，集教学、实验室、办公于一体。理学院大楼位于大沙河畔，以“智慧之门”为设计理念，由两幢L形建筑构成，成为校园南端制高点上最靓丽的“天际线”。",
-        "image": "../images/building/理学院.jpg"
+        "image": app.group_images + "理学院.jpg"
     },
     {
       "id": 72,
@@ -632,7 +634,7 @@ module.exports = [
         "longitude": "114.00035017434607",
         "latitude": "22.595117774701784",
         "discrption": "商学院新大楼总建筑面积36866.93平方米，地上5层，地下2层，通过三层的架空通道与第三教学楼连通。",
-        "image": "../images/building/商学院.jpg"
+        "image": app.group_images + "商学院.jpg"
     },
     {
       "id": 73,
@@ -641,7 +643,7 @@ module.exports = [
         "longitude": "114.0020374038046",
         "latitude": "22.59755041390983",
         "discrption": "人文社会科学学院大楼于2020年10月启用，总建筑面积约6545平米，包括三层的建筑群组，轻巧通透的建筑形体，依山就势，是南科大二期建筑中极富文化韵味的新岭南建筑。",
-        "image": "../images/building/人文社科学院.jpg"
+        "image": app.group_images + "人文社科学院.jpg"
     },
     {
       "id": 74,
@@ -650,7 +652,7 @@ module.exports = [
         "longitude": "114.00415415320799",
         "latitude": "22.601894906390402",
         "discrption": "由润扬集团冠名。润扬体育馆共四层。一楼有舞蹈教室，二楼有击剑馆，四楼有健身房，建筑中心位置是羽毛球场和南北两侧可移动观众席，也可以举行各种大型活动。",
-        "image": "../images/building/润扬体育馆.jpg"
+        "image": app.group_images + "润扬体育馆.jpg"
     },
     {
       "id": 75,
@@ -659,7 +661,7 @@ module.exports = [
         "longitude": "114.00321407805586",
         "latitude": "22.601739586954942",
         "discrption": "由松禾资本冠名。松禾体育场由标准11人制人工草足球场、外围塑胶跑道和西侧观众看台组成。开放时间：8:00-22:00（熄灯时间）。",
-        "image": "../images/building/松禾体育场.jpg"
+        "image": app.group_images + "松禾体育场.jpg"
     },
     {
       "id": 76,
@@ -668,7 +670,7 @@ module.exports = [
         "longitude": "113.99954961467688",
         "latitude": "22.598917757728604",
         "discrption": "风雨操场在湖畔宿舍对面，由室外游泳池、室内篮球馆、室内排球馆和室内搏击馆组成。",
-        "image": "../images/building/风雨操场.jpg"
+        "image": app.group_images + "风雨操场.jpg"
     },
     {
       "id": 77,
@@ -700,7 +702,7 @@ module.exports = [
         "longitude": "113.99796251502562",
         "latitude": "22.5944621665323",
         "discrption": "行政楼是南科大行政人员的办公场所，也是接待到访宾客的重要地点，毗邻大沙河和琳恩图书馆，风景优美。",
-        "image": "../images/building/行政楼.jpg"
+        "image": app.group_images + "行政楼.jpg"
     },
     {
       "id": 81,
@@ -709,6 +711,6 @@ module.exports = [
         "longitude":"113.99686530139968",
         "latitude": "22.592817317738394",
         "discrption": "南科大中心总建筑面积约3万平方米，是结合了餐饮中心、图书学习中心、活动中心的多功能综合体。橙红色的陶板系统，将不同功能的建筑体块统一在一起，绿色步行长廊穿插缝合，引导人们在各个空间中自由穿行，形成丰富流畅的场景感并创造出生动有趣的公共空间。",
-        "image": "../images/building/南科大会议中心.jpg"
+        "image": app.group_images + "南科大会议中心.jpg"
     }
 ]

@@ -151,6 +151,8 @@ Page({
       width: 25,
       height: 25,
       iconPath: "../../images/icons/地点.png",
+      image: item.image,
+      discription: item.discrption
     };
     return marker;
   },
@@ -169,7 +171,7 @@ Page({
     this.setData({
       showDialog: true,
       markers: markers,
-      'showingContent.image' : "../../images/main/sustech_2.JPG",
+      'showingContent.image' : image,
       'showingContent.longitude': longitude,
       'showingContent.latitude': latitude,
       'showingContent.name': name,
