@@ -1,52 +1,62 @@
 <!--pages/map/map.wxml-->
 <!-- <>搜索栏加到最上面 -->
-<van-tabs active="{{ active }}" swipeable>
+<van-tabs active="{{ active }}" bind:change="onChange">
   <van-tab title="教学楼">
     <map id="map1"
     class="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="17" 
-    show-location >
+    show-location markers="{{markers}}">
   </map>
   </van-tab>
   <van-tab title="院系">
     <map id="map2"
     class="map"
-    longitude="{{longitude}}" latitude="{{latitude}}">
+    longitude="{{longitude}}" latitude="{{latitude}}" scale="17" 
+    show-location markers="{{markers}}">
   </map>
   </van-tab>
   <van-tab title="宿舍">
     <map id="map3"
     class="map"
-    longitude="{{longitude}}" latitude="{{latitude}}">
+    longitude="{{longitude}}" latitude="{{latitude}}" scale="17" 
+    show-location markers="{{markers}}">
     </map>
   </van-tab>
   <van-tab title="出入口">
     <map id="map4"
     class="map"
-    longitude="{{longitude}}" latitude="{{latitude}}">
+    longitude="{{longitude}}" latitude="{{latitude}}" scale="17" 
+    show-location markers="{{markers}}">
     </map>
   </van-tab>
   <van-tab title="图书馆">
     <map id="map5"
     class="map"
-    longitude="{{longitude}}" latitude="{{latitude}}">
+    longitude="{{longitude}}" latitude="{{latitude}}" scale="17" 
+    show-location markers="{{markers}}">
   </map>
   </van-tab>
   <van-tab title="餐饮">
     <map id="map6"
     class="map"
-    longitude="{{longitude}}" latitude="{{latitude}}">
+    longitude="{{longitude}}" latitude="{{latitude}}" scale="17" 
+    show-location markers="{{markers}}">
   </map>
   </van-tab>
   <van-tab title="运动场所">
     <map id="map7"
     class="map"
-    longitude="{{longitude}}" latitude="{{latitude}}">
+    longitude="{{longitude}}" latitude="{{latitude}}" scale="17" 
+    show-location markers="{{markers}}">
   </map>
   </van-tab>
   <van-tab title="其他建筑">
     <map id="map8"
     class="map"
-    longitude="{{longitude}}" latitude="{{latitude}}">
+    longitude="{{longitude}}" latitude="{{latitude}}" scale="17" 
+    show-location markers="{{markers}}">
   </map>
   </van-tab>
 </van-tabs>
+<view class="viewlittle" bindtap="moveTolocation" >
+    <image src="../../images/icons/location.png" ></image>
+</view>

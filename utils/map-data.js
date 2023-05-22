@@ -307,13 +307,13 @@ module.exports = [
         "longitude": "113.99520073165434",
         "latitude": "22.5945201103831"
     },
-    {
-      "id": 45,
-        "type": "服务点",
-        "name": "社康中心",
-        "longitude": "",
-        "latitude": ""
-    },
+    // {
+    //   "id": 45,
+    //     "type": "服务点",
+    //     "name": "社康中心",
+    //     "longitude": "",
+    //     "latitude": ""
+    // },
     {
       "id": 46,
         "type": "服务点",
@@ -366,7 +366,7 @@ module.exports = [
     {
       "id": 53,
         "type": "服务点",
-        "name": "学生事务中心 ？",
+        "name": "学生事务中心",
         "longitude": "113.99753906885167",
         "latitude": "22.59735722548741"
     },
@@ -426,13 +426,13 @@ module.exports = [
         "longitude": "113.99854770927413",
         "latitude": "22.602086754910225"
     },
-    {
-      "id": 62,
-        "type": "餐饮",
-        "name": "第二学生食堂",
-        "longitude": "",
-        "latitude": ""
-    },
+    // {
+    //   "id": 62,
+    //     "type": "餐饮",
+    //     "name": "第二学生食堂",
+    //     "longitude": "",
+    //     "latitude": ""
+    // },
     {
       "id": 63,
         "type": "餐饮",
@@ -468,13 +468,13 @@ module.exports = [
         "longitude": "113.99552434137968",
         "latitude": "22.600386614810322"
     },
-    {
-      "id": 68,
-        "type": "餐饮",
-        "name": "茶米相期",
-        "longitude": "",
-        "latitude": ""
-    },
+    // {
+    //   "id": 68,
+    //     "type": "餐饮",
+    //     "name": "茶米相期",
+    //     "longitude": "",
+    //     "latitude": ""
+    // },
     {
       "id": 69,
         "type": "院系",
@@ -538,30 +538,32 @@ module.exports = [
         "longitude": "114.00247412361364",
         "latitude": "22.600508363338328"
     },
-    {
-      "id": 78,
-        "type": "运动场所",
-        "name": "欣园篮球场",
-        "longitude": "",
-        "latitude": ""
-    },
-    {
-      "id": 79,
-        "type": "运动场所",
-        "name": "欣园足球场",
-        "longitude": "",
-        "latitude": ""
-    },
+    // {
+    //   "id": 78,
+    //     "type": "运动场所",
+    //     "name": "欣园篮球场",
+    //     "longitude": "",
+    //     "latitude": ""
+    // },
+    // {
+    //   "id": 79,
+    //     "type": "运动场所",
+    //     "name": "欣园足球场",
+    //     "longitude": "",
+    //     "latitude": ""
+    // },
     {
       "id": 80,
-        "type": "行政楼",
-        "name": "113.99796251502562",
-        "longitude": "22.5944621665323"
+        "type": "其他建筑",
+        "name": "行政楼",
+        "longitude": "113.99796251502562",
+        "latitude": "22.5944621665323"
     },
     {
       "id": 81,
-        "type": "南科大会议中心",
-        "name": "113.99686530139968",
-        "longitude": "22.592817317738394"
+        "type": "其他建筑",
+        "name": "南科大会议中心",
+        "longitude":"113.99686530139968",
+        "latitude": "22.592817317738394"
     }
 ]
