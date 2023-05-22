@@ -37,48 +37,6 @@ Page({
       markers: this.getMarkers()
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  },
   getNowLocation(){
     wx.getLocation({
       type: 'gcj02',
@@ -201,10 +159,10 @@ Page({
     console.log(e)
     var id = e.markerId
     var name = this.data.markers[id - 1].name
-    var image = ""  //要修改成搜集的图片
+    var image = this.data.markers[id - 1].image  //要修改成搜集的图片
     var longitude = this.data.markers[id - 1].longitude
     var latitude = this.data.markers[id - 1].latitude
-    var discription = "测试" //要修改
+    var discription = this.data.markers[id - 1].discription //要修改
     console.log(name)
     var markers = this.data.markers
     markers[id - 1].iconPath = "../../images/icons/收藏地点.png"
