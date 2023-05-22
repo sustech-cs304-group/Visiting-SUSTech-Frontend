@@ -10,7 +10,7 @@
   overflow: hidden;
   background-color: #fff;
   position: fixed;
-  bottom: 50rpx;right: 20rpx;
+  top: 450rpx;right: 20rpx;
   display: flex;justify-content: center;align-items: center;
   border-radius: 8rpx;z-index: 1002}
 .viewlittle image{

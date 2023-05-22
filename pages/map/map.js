@@ -183,5 +183,28 @@ Page({
       iconPath: "../../images/icons/position.png",
     };
     return marker;
-  }
+  },
+  //点击标记
+  markertap(e){
+    console.log(e)
+    var id = e.markerId
+    var name = this.data.markers[id - 1].name
+    console.log(name)
+    var markers = this.data.markers
+    markers[id - 1].iconPath = "../../images/icons/select_position.png"
+    this.setData({
+      showDialog: true,
+      markers: markers
+    })
+  },
+  toggleDialog: function () {
+    var markers = this.data.markers
+    for(var item of markers){
+      item.iconPath = "../../images/icons/position.png"
+    }
+    this.setData({
+      showDialog: false,
+      markers: markers
+    })
+  },
 })
