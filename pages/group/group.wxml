@@ -61,6 +61,7 @@
               border="{{ false }}"
               bind:input="changeContent"
               bind:confirm="confirmComment"
+              bind:blur="onClose"
             />
           </van-cell-group>
         </van-popup>

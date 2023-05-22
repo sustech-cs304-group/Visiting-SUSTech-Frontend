@@ -1,4 +1,4 @@
-var prefix = 'http://124.71.99.48:443'
+var prefix = 'http://124.71.99.48:8080'
 
 var bizlogic = {
   // 是否是本地
@@ -21,6 +21,7 @@ var bizlogic = {
   local_group_query: prefix + '/forum/query',
   local_group_like: prefix + '/forumlike/add',
   local_group_comment: prefix + '/comment/add',
+  local_image: prefix + '/images/',
   
   // 服务器地址 
   formal_update_avatar: '', 
@@ -41,7 +42,8 @@ load_news = '',
 post_group = '',
 group_query = '',
 group_like = '',
-group_comment = ''
+group_comment = '',
+group_images = ''
 ;
  
 // 判断是否是本地
@@ -60,6 +62,7 @@ if (bizlogic.isLocal == true) {
   group_query = bizlogic.local_group_query;
   group_like = bizlogic.local_group_like;
   group_comment = bizlogic.local_group_comment;
+  group_images = bizlogic.local_image;
 } else {
   update_avatar = bizlogic.formal_update_avatar;
   update_person_info = bizlogic.formal_update_person_info;
@@ -81,5 +84,6 @@ module.exports = {
   post_group: post_group,
   group_query: group_query,
   group_like: group_like,
-  group_comment: group_comment
+  group_comment: group_comment,
+  group_images: group_images
 }
