@@ -54,7 +54,7 @@ Page({
         data: {
           content: this.data.content,
           imgOrRadio: this.data.fileList,
-          location: 'testLocation'
+          location: '南方科技大学'
         },
         success(res) {
           console.log(res);

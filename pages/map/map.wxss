@@ -16,8 +16,22 @@
 .viewlittle image{
   width: 50rpx;height: 50rpx;vertical-align: bottom;
 }
-.position-img{
-  width: 100%;vertical-align: bottom;height: 230rpx;border-radius: 8rpx;
-  margin-top: 50rpx; margin-left: 50rpx;
+.location-title{
+  display: inline-block;
+  /* margin-left: 200rpx; */
+  text-align: right;
+  font-size: 50rpx;
+  width: 450rpx;
 }
 
+.location-icon{
+  display: inline-block;
+  margin-left: 50rpx;
+}
+
+.location-content{
+  padding: 30rpx 30rpx;
+  font-size: 32rpx;
+  color: #454545;
+  line-height: 44rpx;
+}

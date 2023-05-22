@@ -88,11 +88,16 @@
   bind:close="toggleDialog"
   custom-style="height: 70vh;"
 >
-<van-row>
-  <van-col span="12">
-    <image class="position-img" src='{{showingContent.image}}'></image>
-  </van-col>
-  <van-col span="4" offset="4">{{showingContent.name}}</van-col>
-  <van-icon name="guide-o"  size="50px" bind:click="navigateTo"/>
-</van-row>
+
+<image style="width: 100%;" class="position-img" src='{{showingContent.image}}'></image>
+<!-- <van-cell title="{{showingContent.name}}" size="large" /> -->
+<view class="location-title">
+  <text>{{showingContent.name}}</text>
+</view>
+<view class="location-icon">
+<van-icon name="guide-o"  size="50px" bind:click="navigateTo"/>
+</view>
+<view class="location-content">
+  <text>{{showingContent.discription}}</text>
+</view>
 </van-popup>
