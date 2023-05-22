@@ -1,4 +1,4 @@
-var prefix = 'http://124.71.99.48:443'
+var prefix = 'http://124.71.99.48:8080'
 
 var bizlogic = {
   // 是否是本地

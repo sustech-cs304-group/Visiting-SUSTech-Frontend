@@ -1,5 +1,12 @@
 <!--pages/map/map.wxml-->
-<van-search value="{{ value }}" placeholder="请输入搜索关键词" />
+<van-search
+  value="{{ value }}"
+  placeholder="请输入搜索关键词"
+  use-action-slot
+  bind:search="onSearch"
+>
+  <view slot="action" bind:tap="onSearch">搜索</view>
+</van-search>
 <van-tabs active="{{ active }}" bind:change="onChange">
   <van-tab title="教学楼">
     <map id="map1"
@@ -11,49 +18,49 @@
     <map id="map2"
     class="map"
     longitude="{{longitude}}" latitude="{{latitude}}" scale="17" 
-    show-location markers="{{markers}}">
+    show-location markers="{{markers}}" bindmarkertap="markertap" >
   </map>
   </van-tab>
   <van-tab title="宿舍">
     <map id="map3"
     class="map"
     longitude="{{longitude}}" latitude="{{latitude}}" scale="17" 
-    show-location markers="{{markers}}">
+    show-location markers="{{markers}}" bindmarkertap="markertap" >
     </map>
   </van-tab>
   <van-tab title="出入口">
     <map id="map4"
     class="map"
     longitude="{{longitude}}" latitude="{{latitude}}" scale="17" 
-    show-location markers="{{markers}}">
+    show-location markers="{{markers}}" bindmarkertap="markertap" >
     </map>
   </van-tab>
   <van-tab title="图书馆">
     <map id="map5"
     class="map"
     longitude="{{longitude}}" latitude="{{latitude}}" scale="17" 
-    show-location markers="{{markers}}">
+    show-location markers="{{markers}}" bindmarkertap="markertap" >
   </map>
   </van-tab>
   <van-tab title="餐饮">
     <map id="map6"
     class="map"
     longitude="{{longitude}}" latitude="{{latitude}}" scale="17" 
-    show-location markers="{{markers}}">
+    show-location markers="{{markers}}" bindmarkertap="markertap" >
   </map>
   </van-tab>
   <van-tab title="运动场所">
     <map id="map7"
     class="map"
     longitude="{{longitude}}" latitude="{{latitude}}" scale="17" 
-    show-location markers="{{markers}}">
+    show-location markers="{{markers}}" bindmarkertap="markertap" >
   </map>
   </van-tab>
   <van-tab title="其他建筑">
     <map id="map8"
     class="map"
     longitude="{{longitude}}" latitude="{{latitude}}" scale="17" 
-    show-location markers="{{markers}}">
+    show-location markers="{{markers}}" bindmarkertap="markertap" >
   </map>
   </van-tab>
 </van-tabs>
@@ -65,7 +72,14 @@
   position="bottom"
   overlay="{{ true }}"
   bind:close="toggleDialog"
-  custom-style="height: 50vh;"
+  custom-style="height: 70vh;"
 >
-  内容
+<van-row>
+  <van-col span="12">
+    <image class="position-img" src='{{showingContent.image}}'></image>
+  </van-col>
+  <van-col span="4" offset="4">{{showingContent.name}}</van-col>
+  <van-icon name="guide-o"  size="50px" bind:click="navigateTo"/>
+  <!-- bindtap="navigateTo" -->
+</van-row>
 </van-popup>
