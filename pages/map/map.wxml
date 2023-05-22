@@ -5,8 +5,22 @@
   use-action-slot
   bind:search="onSearch"
 >
-  <view slot="action" bind:tap="onSearch">搜索</view>
 </van-search>
+<van-popup
+  show="{{ showResult }}"
+  position="bottom"
+  overlay="{{ true }}"
+  bind:close="close"
+  custom-style="height: 70vh;"
+>
+<van-picker
+  show-toolbar
+  title="搜索结果"
+  columns="{{searchResult}}"
+  bind:cancel="onCancel"
+  bind:confirm="onConfirm"
+/>
+</van-popup>
 <van-tabs active="{{ active }}" bind:change="onChange">
   <van-tab title="教学楼">
     <map id="map1"
@@ -80,6 +94,5 @@
   </van-col>
   <van-col span="4" offset="4">{{showingContent.name}}</van-col>
   <van-icon name="guide-o"  size="50px" bind:click="navigateTo"/>
-  <!-- bindtap="navigateTo" -->
 </van-row>
 </van-popup>

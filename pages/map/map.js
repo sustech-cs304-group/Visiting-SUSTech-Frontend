@@ -9,10 +9,12 @@ Page({
    */
   data: {
     value: '',   //搜索框
+    searchResult: [],
     longitude: 113.99745890567851,
     latitude: 22.596228072936825,
     markers:[],
     showDialog: false,
+    showResult: false,
     mapId: "map1",  //map的id 根据onchange要改变
     showingContent:{
       image: "../../images/main/sustech_1.JPG",
@@ -188,9 +190,9 @@ Page({
       name: item.name,
       latitude: latitude,
       longitude: longitude,
-      width: 30,
-      height: 30,
-      iconPath: "../../images/icons/position.png",
+      width: 25,
+      height: 25,
+      iconPath: "../../images/icons/地点.png",
     };
     return marker;
   },
@@ -205,7 +207,7 @@ Page({
     var discription = "测试" //要修改
     console.log(name)
     var markers = this.data.markers
-    markers[id - 1].iconPath = "../../images/icons/select_position.png"
+    markers[id - 1].iconPath = "../../images/icons/收藏地点.png"
     this.setData({
       showDialog: true,
       markers: markers,
@@ -219,11 +221,16 @@ Page({
   toggleDialog: function () {
     var markers = this.data.markers
     for(var item of markers){
-      item.iconPath = "../../images/icons/position.png"
+      item.iconPath = "../../images/icons/地点.png"
     }
     this.setData({
       showDialog: false,
       markers: markers
+    })
+  },
+  close(){
+    this.setData({
+      showResult: false
     })
   },
   navigateTo(){
@@ -238,7 +245,48 @@ Page({
       url: 'plugin://routePlan/index?key=' + key + '&referer=' + referer + '&endPoint=' + endPoint
     });
   },
-  onSearch(){
-    
+  onSearch(e){
+    console.log(e)
+    this.setData({
+      value: e.detail,
+    })
+    let val = e.detail;
+    let result = []
+    for(let item of map_data){
+      if(item.name.indexOf(val) > -1){ //是否有关键词
+        result.push(item.name)
+      }
+    }
+    console.log(result)
+    this.setData({
+      searchResult: result,
+      showResult: true
+    })
+  },
+  onCancel() {
+    this.setData({ showResult: false });
+  },
+  onConfirm(e){
+    console.log(e)
+    var name = e.detail.value
+    var latitude;
+    var longitude;
+    for(var item of map_data){
+      if(item.name == name){
+        latitude = item.latitude;
+        longitude = item.longitude;
+        break;
+      }
+    }
+    let key = '42CBZ-LNTCT-DJ4XT-VTRI2-J4HUQ-34FCZ'
+    let referer = '参观南科大';   //调用插件的app的名称
+    let endPoint = JSON.stringify({  //终点
+      'name': name,
+      'latitude': latitude,
+      'longitude': longitude
+    });
+    wx.navigateTo({
+      url: 'plugin://routePlan/index?key=' + key + '&referer=' + referer + '&endPoint=' + endPoint
+    });
   }
 })
