@@ -26,6 +26,8 @@
       "disablePlugins": [],
       "outputPath": ""
     },
-    "condition": false
+    "condition": false,
+    "es6": true,
+    "enhance": true
   }
 }

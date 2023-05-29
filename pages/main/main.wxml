@@ -30,14 +30,14 @@
                     <text>{{item.news_time}}</text>
                 </a>
             </view>
-            <view bindtap="jump_to_news" class="news-content">
+            <view bindtap="jump_to_news" class="news-content" data-id="{{item.news_id}}">
                 <view class="news-title">
                     <a class="question-link">
                         <text>{{item.news_title}}</text>
                     </a>
                 </view>
                  <view class="news-pic">
-                        <image src="{{item.news_source_img}}"></image>
+                        <image src="{{item.news_cover}}"></image>
                 </view>
             </view>
         </view>

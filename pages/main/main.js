@@ -8,9 +8,9 @@ Page({
    */
   data: {
     sustech_imgs: [
-      "../../images/main/sustech_1.JPG",
-      "../../images/main/sustech_2.JPG",
-      "../../images/main/sustech_3.JPG"
+      app.group_images + "sustech_1.JPG",
+      app.group_images + "sustech_2.JPG",
+      app.group_images + "sustech_3.JPG"
     ],
     news: [
       {
@@ -20,7 +20,8 @@ Page({
         "news_source_img": "../../images/icons/sustech.png",
         "news_title": "南方科技大学预约系统上线啦！",
         "news_time": "2019-05-01",
-        "news_cover": "../../images/main/sustech_1.JPG"
+        "news_cover": "../../images/main/sustech_1.JPG",
+        "content" : "test"
       },
     ]
   },
@@ -31,10 +32,15 @@ Page({
     })
   },
 
-  jump_to_news: function() {
-    console.log('jump to news')
+  jump_to_news: function(e) {
+    let jump_to_news = ''
+    this.data.news.forEach(item => {
+        if (item.news_id == e.currentTarget.dataset.id) {
+          jump_to_news = item;
+        }
+    });
     wx.navigateTo({
-      url: '../news/news',
+      url: '../news/news?news=' + JSON.stringify(jump_to_news),
     })
   },
   switch_to_info_page: function(){
@@ -46,7 +52,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    // this.switch_to_info_page();
+    
   },
 
   /**
@@ -60,7 +66,40 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    let that = this;
+    wx.request({
+      url: app.load_news,
+      method:'GET',
+      header: {
+        'Authorization': wx.getStorageSync('token'),
+        'Content-Type': "application/x-www-form-urlencoded"
+      },
+      success(res){
+        console.log(res);
+        let receive_news = [];
+        let array = res.data.data;
+        array.forEach(element => {
+          let format_time = element.createTime.split('T')[0]
+          receive_news.push(
+            {
+              "news_id": element.id,
+              "news_source_id": 23,
+              "news_source_name": "南方科技大学",
+              "news_source_img": "../../images/icons/sustech.png",
+              "news_title": element.title,
+              "news_time": format_time,
+              "news_cover": element.pictureUrl,
+              "content": element.content
+            },
+          )
+        });
+        console.log(receive_news)
+        that.setData({'news': receive_news});
+      },
+      fail(res){
+        console.log(res);
+      }
+    })
   },
 
   /**
