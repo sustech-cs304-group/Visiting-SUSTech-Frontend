@@ -1,2 +1,7 @@
 <!--pages/map/map.wxml-->
 <text>pages/map/map.wxml</text>
+
+<view class='view'>
+  <map longitude="{{longitude}}" latitude="{{latitude}}" bindmarkertap="skipToDetails" markers="{{markers}}" covers="{{covers}}" show-location>
+  </map>
+</view>
