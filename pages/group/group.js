@@ -70,11 +70,11 @@ Page({
       data: {},
       success(res) {
         that.data.DataSource = []
-        receive_data = res.data.data
+        let receive_data = res.data.data
         console.log(receive_data.imgOrRadio);
         console.log(receive_data);
         receive_data.forEach(item => {
-          t = item.createDate.split('T')[1].substring(0, 5)
+          let t = item.createDate.split('T')[1].substring(0, 5)
           console.log(item.imgOrRadio)
           let group = {
               id: item.id,
@@ -90,10 +90,9 @@ Page({
           for (const key in item.comments) {
             if (item.comments.hasOwnProperty(key)) {
               const value = item.comments[key];
-              console.log(`Key: ${key}, Value: ${value}`);
               group.comment.push({
-                'firstname': key,
-                'content': value
+                'firstname': value.nickname,
+                'content': value.content
               })
             }
           }
@@ -112,20 +111,6 @@ Page({
     let hasZan = false;
     that = this;
     let id = e.currentTarget.dataset.id;
-    that.data.DataSource.forEach(item => {
-      if (item.id == id) {
-        let nickname = app.globalData.userInfo.nickName;
-        if (item.zanSource.indexOf(nickname) != -1) {
-          hasZan = true;
-          wx.showModal({
-            title: '提交',
-            content: '已赞过',
-            showCancel: false,
-          })
-        }
-      }
-    });
-    if (hasZan) return;
     wx.request({
       url: app.group_like,
       method: 'POST',
@@ -138,12 +123,27 @@ Page({
       },
       success(res) {
         console.log(res);
-        wx.showModal({
-          title: '提交',
-          content: '点赞成功',
-          showCancel: false,
-        })
+        if (res.data.code == 400) {
+          wx.showModal({
+            title: '提交',
+            content: '已赞过',
+            showCancel: false,
+          })
+        }
+        else {
+          wx.showModal({
+            title: '提交',
+            content: '点赞成功',
+            showCancel: false,
+          })
+        }
         that.onShow();
+      },
+      fail: (res) => {
+        console.log(res)
+        this.showModal({
+          msg: '网络cuowu',
+        })
       }
     }) 
   },
@@ -171,6 +171,7 @@ Page({
           showCancel: false,
         })
         that.setData({ show: false });
+        that.setData({ comment: '' });
         that.onShow();
       }
     }) 

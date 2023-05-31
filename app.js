@@ -127,5 +127,6 @@ App({
   post_group: config.post_group,
   group_query: config.group_query,
   group_like: config.group_like,
-  group_comment: config.group_comment
+  group_comment: config.group_comment,
+  group_images: config.group_images
 })
